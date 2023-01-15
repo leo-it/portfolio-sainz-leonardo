@@ -21,11 +21,7 @@ export const Projects = () => {
         <Typography variant="h3" marginTop={2} marginBottom={5}>
           Here are a few past design projects I've worked on.
         </Typography>
-        <Grid
-          container
-          spacing={3}
-          
-        >
+        <Grid container spacing={3}>
           <Grid item xs={12} sm={4}>
             <CardProject img={"comida.jpg"} />
           </Grid>{" "}

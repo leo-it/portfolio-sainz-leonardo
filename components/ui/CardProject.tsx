@@ -1,34 +1,21 @@
-import { Box, Button, Card, CardActionArea, CardActions, CardContent, CardMedia, Grid, ImageListItemBar, Typography } from "@mui/material";
+import { Box, Button, Typography } from "@mui/material";
 
 import Image from "next/image";
-import React from 'react'
+import React from "react";
 
-const CardProject = ({img}) => {
-  return (<>
-    <Box
-    sx={{
-      mx: "auto",
-      mt: { xs: 7 },
-      width: 431,
-      height: 290,
-      position: "relative",
-    }}
-  >
-    <Image
-      src={`/img/projects/${img}`}
-      alt="foto de perfil"
-      layout="fill"
-      objectFit="contain"
-    />
-     <ImageListItemBar
-            title="asd"
-            subtitle="{item.author}"
-           
-            
-          />
-  </Box>
-  </>
-  )
-}
+const CardProject = ({ img }) => {
+  return (
+    <Button >
+      <Box className="view view-tenth">
+        <img src={`/img/projects/${img}`} height="300" width="400"   />
+        <Box className="mask">
+        <Typography variant="h5" color={"white"} marginTop={2}>Title</Typography>
+          <Typography variant="h6" color={"white"}>Your Text</Typography>
+       
+        </Box>
+      </Box>
+    </Button>
+  );
+};
 
-export default CardProject
+export default CardProject;

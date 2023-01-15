@@ -1,22 +1,76 @@
-/* .card--profile{
-    background-image: url("/img/bg-card.jfif");
-    background-size: cover;
-    background-repeat: no-repeat;
- 
-} */
-/* .banner {
-  background-image: url("/img/soga.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  width: 30vw;
-  height: 30vh;
-} */
 
-/* .p--custom{
-  font-zize:202px;
+
+
+/* ------------- project card -------------- */
+.view {
+  width: 400px;
+  height: 300px;
+  display: inline-block;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  box-shadow: 1px 1px 2px #e6e6e6;
+  cursor: default;
 }
-@media (min-width: 600px) {
-.p--custom{
-    font-zize:120px;
-  }
-} */
+.view:nth-child(1) {
+  background: rgb(110, 7, 243);
+}
+.view:nth-child(2) {
+  background: rgb(110, 7, 243);
+}
+.view:nth-child(3) {
+  background: rgb(110, 7, 243);
+}
+.view:nth-child(4) {
+  background: rgb(110, 7, 243);
+}
+
+.view .mask,
+.view .content {
+  width: 400px;
+  height: 300px;
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+}
+
+.view img {
+  display: block;
+  position: relative;
+}
+
+
+
+.view-tenth img {
+  transform: scaleY(1);
+  transition: all 0.7s ease-in-out;
+}
+
+.view-tenth .mask {
+  background-color: rgba(255, 231, 179, 0.3);
+  transition: all 0.5s linear;
+  opacity: 0;
+}
+
+.view-tenth a.info {
+  opacity: 0;
+  transform: scale(0);
+  transition: all 0.5s linear;
+}
+
+.view-tenth:hover img {
+  transform: scale(10);
+  opacity: 0;
+}
+
+.view-tenth:hover .mask {
+  opacity: 1;
+}
+
+.view-tenth:hover h2,
+.view-tenth:hover p,
+.view-tenth:hover a.info {
+  transform: scale(1);
+  opacity: 1;
+}
