@@ -1,9 +1,12 @@
-
-
+a:link,
+a:visited,
+a:active {
+  text-decoration: none;
+}
 
 /* ------------- project card -------------- */
 .view {
-  width: 400px;
+  width: 380px;
   height: 300px;
   display: inline-block;
   overflow: hidden;
@@ -12,6 +15,7 @@
   box-shadow: 1px 1px 2px #e6e6e6;
   cursor: default;
 }
+
 .view:nth-child(1) {
   background: rgb(110, 7, 243);
 }
@@ -27,7 +31,7 @@
 
 .view .mask,
 .view .content {
-  width: 400px;
+  width: 380px;
   height: 300px;
   position: absolute;
   overflow: hidden;
@@ -40,8 +44,6 @@
   position: relative;
 }
 
-
-
 .view-tenth img {
   transform: scaleY(1);
   transition: all 0.7s ease-in-out;
@@ -52,7 +54,14 @@
   transition: all 0.5s linear;
   opacity: 0;
 }
-
+@media (max-width: 600px) {
+  .view {
+    width: 300px;
+  }
+  .view .content {
+    width: 300px;
+  }
+}
 .view-tenth a.info {
   opacity: 0;
   transform: scale(0);

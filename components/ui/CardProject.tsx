@@ -7,7 +7,7 @@ const CardProject = ({ img }) => {
   return (
     <Button >
       <Box className="view view-tenth">
-        <img src={`/img/projects/${img}`} height="300" width="400"   />
+        <img src={`/img/projects/${img}`} height="300" width="380"   />
         <Box className="mask">
         <Typography variant="h5" color={"white"} marginTop={2}>Title</Typography>
           <Typography variant="h6" color={"white"}>Your Text</Typography>

@@ -1,5 +1,6 @@
 import { FC, ReactNode } from "react";
 
+import Footer from "../ui/Footer";
 import Head from "next/head";
 import Navbar from "../ui/Navbar";
 import { title } from "process";
@@ -40,7 +41,7 @@ export const PortfolioLayout: FC<Props> = ({
       >
         {children}
       </main>
-
+<Footer/>
      {/*  <footer>footer</footer> */}
     </>
   );

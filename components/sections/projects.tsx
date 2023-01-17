@@ -12,7 +12,8 @@ export const Projects = () => {
         alignItems="center"
         textAlign={"center"}
         sx={{
-          height: { xs: "50vh", sm: "80vh" },
+          minHeight: { xs: "50vh", sm: "80vh" },
+          mt: { xs: 45, md: 0 },
         }}
       >
         <Typography variant="h2" fontWeight={"bold"}>
