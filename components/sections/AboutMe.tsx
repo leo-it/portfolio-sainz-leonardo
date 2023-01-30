@@ -48,7 +48,7 @@ export const AboutMe = () => {
             }}
           >
             <Typography variant="h3" color="white" fontWeight={"bold"}>
-              Hi, I’m Leo. Nice to meet you.
+              Hola, soy Leo. Encantado de conocerte.
             </Typography>
 
             <Typography
@@ -59,12 +59,13 @@ export const AboutMe = () => {
               variant="h6"
               color="white"
             >
-              Since beginning my journey as a freelance designer over 11 years
-              ago, I've done remote work for agencies, consulted for startups,
-              and collaborated with talented people to create digital products
-              for both business and consumer use. I'm quietly confident,
-              naturally curious, and perpetually working on improving my chops
-              one design problem at a time.
+              Desde que comence a aprender JavaScript hace mas de 4 años, tuve
+              la oportunidad de trabajar para una software factory increible en
+              la que use las mejores tecnologias para el frontend. Actualmente
+              trabajo para Accenture en conjunto con el banco Galicia como
+              desarrollador fullstack con Nextjs y Nesjs. En ambas empresas
+              trabaje con personas talentosas y confiables.
+              <br/> Estoy contento con lo que hago y trabajo constantemente para mejorar mis habilidades.
             </Typography>
           </Box>
         </Box>

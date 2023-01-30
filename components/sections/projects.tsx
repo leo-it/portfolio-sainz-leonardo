@@ -13,13 +13,13 @@ export const Projects = () => {
         textAlign={"center"}
         sx={{
           minHeight: { xs: "50vh", sm: "80vh" },
-          mt: { xs: 45, md: 0 },
+          mt: { xs: 125, md: 0 },
         }}
       >
         <Typography variant="h2" fontWeight={"bold"}>
           My Projects
         </Typography>
-        <Typography variant="h3" marginTop={2} marginBottom={5}>
+        <Typography variant="h3" marginTop={10} marginBottom={5}>
           Here are a few past design projects I've worked on.
         </Typography>
         <Grid container spacing={3}>

@@ -50,7 +50,7 @@ export default function Navbar(props: Props) {
             <Link href="mailto:lsainzveron@gmail.com">
               <Box display="flex">
                 <Typography align="center" justifyContent={"center"} my="auto">
-                  Contact
+                  Contacto
                 </Typography>
               </Box>
             </Link>
@@ -100,7 +100,7 @@ export default function Navbar(props: Props) {
                     my="auto"
                     color="white"
                   >
-                    Contact
+                    Contacto
                   </Typography>
                 </Box>
               </Link>

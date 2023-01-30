@@ -22,7 +22,7 @@ const Footer = () => {
     >
       <Box paddingY={5}>
         <Typography variant="h3" color={"white"}>
-          contact me
+          contactame
         </Typography>
       </Box>
       <Box display={"flex"} justifyContent="center">

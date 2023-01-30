@@ -35,7 +35,7 @@ export const SayHello = () => {
             color=" rgba(10, 10, 10, 0.9);
             }"
           >
-            I design and code beautifully simple things, and I love what I do.
+            Desarrollador Reactjs/Nextjs
           </Typography>
         </Box>
         <Box
