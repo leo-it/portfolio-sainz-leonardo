@@ -2,6 +2,7 @@ import { Box, Grid, Typography } from "@mui/material";
 
 import CardProject from "../ui/CardProject";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 export const Projects = () => {
@@ -24,22 +25,24 @@ export const Projects = () => {
         </Typography>
         <Grid container spacing={3}>
           <Grid item xs={12} sm={4}>
-            <CardProject img={"comida.jpg"} />
+            <Link href={"/project/react-query"}>
+              <CardProject title="React Query" text="Practica con la libreria de React query" img={"react-query.png"} />
+            </Link>
           </Grid>{" "}
           <Grid item xs={12} sm={4}>
-            <CardProject img={"sleep.png"} />
+            <CardProject title="" text="" img={"sleep.png"} />
           </Grid>{" "}
           <Grid item xs={12} sm={4}>
-            <CardProject img={"comida.jpg"} />
+            <CardProject title="" text="" img={"comida.jpg"} />
           </Grid>{" "}
           <Grid item xs={12} sm={4}>
-            <CardProject img={"sleep.png"} />
+            <CardProject title="" text="" img={"sleep.png"} />
           </Grid>{" "}
           <Grid item xs={12} sm={4}>
-            <CardProject img={"comida.jpg"} />
+            <CardProject title="" text="" img={"comida.jpg"} />
           </Grid>{" "}
           <Grid item xs={12} sm={4}>
-            <CardProject img={"sleep.png"} />
+            <CardProject title="" text="" img={"sleep.png"} />
           </Grid>
         </Grid>
       </Box>
