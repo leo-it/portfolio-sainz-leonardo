@@ -24,17 +24,34 @@ export const Projects = () => {
           Here are a few past design projects I've worked on.
         </Typography>
         <Grid container spacing={3}>
-          <Grid item xs={12} sm={4}>
-            <Link href={"/project/react-query"}>
-              <CardProject title="React Query" text="Practica con la libreria de React query" img={"react-query.png"} />
+        <Grid item xs={12} sm={4}>
+            <Link href={"https://sleepy-eight.vercel.app/"}>
+              <CardProject
+                title="Next y Material UI"
+                text="Para esta web me enfoque en lo visual usando libreria para los efectos de movimiento, scroll y carrousel"
+                img={"sleepy.png"}
+              />
             </Link>
           </Grid>{" "}
           <Grid item xs={12} sm={4}>
-            <CardProject title="" text="" img={"sleep.png"} />
+            <Link href={"/project/react-query"}>
+              <CardProject
+                title="React Query"
+                text="Practica con la libreria de React query simulando un ecommerce"
+                img={"react-query.png"}
+              />
+            </Link>
           </Grid>{" "}
           <Grid item xs={12} sm={4}>
-            <CardProject title="" text="" img={"comida.jpg"} />
+            <Link href={"/project/redux-toolkit"}>
+              <CardProject
+                title="Redux Toolkit"
+                text="Practica con Redux Toolkit"
+                img={"sleep.png"}
+              />
+            </Link>
           </Grid>{" "}
+        
           <Grid item xs={12} sm={4}>
             <CardProject title="" text="" img={"sleep.png"} />
           </Grid>{" "}
