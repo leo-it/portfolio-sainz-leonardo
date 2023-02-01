@@ -1,0 +1,54 @@
+{
+  "ip": "181.170.156.251",
+  "type": "IPv4",
+  "location": { "latitude": -34.603729, "longitude": -58.381577 },
+  "postcode": "C1871",
+  "area": { "code": "AR-C", "geonameid": 3433955, "name": "Buenos Aires F.D." },
+  "asn": { "number": 7303, "organisation": "Telecom Argentina S.A." },
+  "city": {
+    "geonameid": 3435910,
+    "name": "Buenos Aires",
+    "population": 2891082
+  },
+  "continent": { "geonameid": 6255150, "name": "South America", "code": "SA" },
+  "country": {
+    "geonameid": 3865483,
+    "name": "Argentina",
+    "code": "AR",
+    "capital": "Buenos Aires",
+    "area_size": "2766890.00 sq. km",
+    "population": 44494502,
+    "phone_code": "54",
+    "is_in_eu": false,
+    "languages": {
+      "es": "Spanish language",
+      "en": "English language",
+      "it": "Italian language",
+      "de": "German language",
+      "fr": "French language",
+      "gn": "Guarani language"
+    },
+    "flag": {
+      "file": "https://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_Argentina.svg",
+      "emoji": "🇦🇷",
+      "unicode": "U+1F1E6 U+1F1F7"
+    },
+    "tld": ".ar"
+  },
+  "currency": { "code": "ARS", "name": "Argentine peso" },
+  "security": {
+    "is_tor": false,
+    "is_proxy": false,
+    "is_crawler": false,
+    "is_threat": false,
+    "is_thread": false
+  },
+  "time": {
+    "timezone": "America/Argentina/Buenos_Aires",
+    "gtm_offset": -10800,
+    "gmt_offset": -10800,
+    "is_daylight_saving": false,
+    "code": "-03"
+  },
+  "status": "success"
+}

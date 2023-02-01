@@ -24,8 +24,11 @@ export const Projects = () => {
           Here are a few past design projects I've worked on.
         </Typography>
         <Grid container spacing={3}>
-        <Grid item xs={12} sm={4}>
-            <Link href={"https://sleepy-eight.vercel.app/"}>
+          {/* todo ver cards de codepen por ahi son mas esteticas
+         ej https://codepen.io/collection/XLebem/
+          */}
+          <Grid item xs={12} sm={4}>
+            <Link target="_blank" href={"https://sleepy-eight.vercel.app/"}>
               <CardProject
                 title="Next y Material UI"
                 text="Para esta web me enfoque en lo visual usando libreria para los efectos de movimiento, scroll y carrousel"
@@ -51,7 +54,6 @@ export const Projects = () => {
               />
             </Link>
           </Grid>{" "}
-        
           <Grid item xs={12} sm={4}>
             <CardProject title="" text="" img={"sleep.png"} />
           </Grid>{" "}
