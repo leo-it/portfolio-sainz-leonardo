@@ -1,17 +1,23 @@
 import { Button, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
+import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 
 import { APIKEY } from "constants/keys";
 import Box from "@mui/material/Box";
 import FormControl from "@mui/material/FormControl";
 import InputLabel from "@mui/material/InputLabel";
+import Link from "next/link";
 import MenuItem from "@mui/material/MenuItem";
 import Select from "@mui/material/Select";
 import { SelectChangeEvent } from "@mui/material/Select";
 import TextField from "@mui/material/TextField";
+import { saveInfletaData } from "@/redux/slices/infleta";
 
 const ipCountry = "37.140.128.10";
 const ReduxToolkit = () => {
+  const cuotasRedux = useAppSelector((state) => state.infleta);
+  const dispatch = useAppDispatch();
+
   const [cuotas, setCuotas] = React.useState("");
   const [inflacion, setInflacion] = useState();
   const [precioCuotas, setPrecioCuotas] = useState(0);
@@ -31,21 +37,32 @@ const ReduxToolkit = () => {
   }, [cuotas, inflacion, precioCuotas, precioContado]);
 
   const handleClick = () => {
+    console.log(precioConInteresFinal);
     setcalculoActive(true);
     const precioConInteres = checkPaymentOption(
       precioContado,
       inflacion,
       cuotas
     );
-
-    setPrecioConInteresFinal({
-      data: precioConInteres,
-      text: precioConInteres < precioCuotas * 1 ? "contado" : "cuotas",
-    });
-    console.log(precioConInteres < precioCuotas * 1);
+    dispatch(
+      saveInfletaData({
+        cuotas: cuotas,
+        inflacion: inflacion,
+        precioCuotas: precioCuotas,
+        precioContado: precioContado,
+        precioConInteresFinal: {
+          data: precioConInteres,
+          text: precioConInteres < precioCuotas * 1 ? "contado" : "cuotas",
+        },
+      })
+    );
   };
 
-  function checkPaymentOption(priceContado, inflation, installments) {
+  function checkPaymentOption(
+    priceContado: number,
+    inflation: number,
+    installments: number
+  ) {
     const inflatedPriceContado =
       priceContado * (1 + inflation / 100 / 12) ** (installments * 12);
     return inflatedPriceContado;
@@ -104,26 +121,19 @@ const ReduxToolkit = () => {
             </Select>
           </FormControl>
         </Box>
-        <Button disabled={buttonDisabled} onClick={handleClick}>
-          Calcular
+        <Button
+          disabled={buttonDisabled}
+          variant={"contained"}
+          onClick={handleClick}
+          color="primary"
+        >
+          <Link href={"redux-toolkit/resultado"}>
+            <Typography color={buttonDisabled ? "primary" : "white"}>
+              Calcular
+            </Typography>
+          </Link>
         </Button>
       </form>
-      {calculoActive ? (
-        <>
-          <Typography mt={5} variant="h4">
-            {" "}
-            Resultado: {precioConInteresFinal.text}
-          </Typography>
-          <Typography mt={5} variant="h4">
-            precioConInteresFinal: {precioConInteresFinal.data}
-          </Typography>{" "}
-          <Typography mt={5} variant="h4">
-            precioCuotas: {precioCuotas}
-          </Typography>
-        </>
-      ) : (
-        <></>
-      )}
     </>
   );
 };
