@@ -1,12 +1,10 @@
 import { Box, Card, CardContent } from "@mui/material";
 
-import IconButton from "@mui/material/IconButton";
+import AlertDialogSlide from "@/components/ui/AlertDialogSlide";
 import Image from "next/image";
-import InfoIcon from "@mui/icons-material/Info";
 import Link from "next/link";
 import { PortfolioLayout } from "@/components/layout";
 import React from "react";
-import Tooltip from "@mui/material/Tooltip";
 import Typography from "@mui/material/Typography";
 import { useAppSelector } from "@/redux/hooks";
 
@@ -16,6 +14,13 @@ const resultado = () => {
 
   return (
     <PortfolioLayout title={"redux toolkit"} pageDescription={"redux toolkit"}>
+      <AlertDialogSlide
+        name={"Descripcion de seccion"}
+        title={"Redux toolkit"}
+        description={
+          "La logica para calcular la inflacion fue generada por GPT-3, creado por OpenAI."
+        }
+      />
       <Box
         minHeight={"90vh"}
         display={"flex"}
@@ -33,11 +38,6 @@ const resultado = () => {
                 <CardContent>
                   <Typography mt={5} variant="h4">
                     Paga en: {infletaSelector.precioConInteresFinal?.text}{" "}
-                    <Tooltip title="La logica para calcular la inflacion fue generada por GPT-3, creado por OpenAI">
-                      <IconButton>
-                        <InfoIcon />
-                      </IconButton>
-                    </Tooltip>
                   </Typography>
                   <Typography mt={5} variant="h4">
                     precioConInteresFinal:
