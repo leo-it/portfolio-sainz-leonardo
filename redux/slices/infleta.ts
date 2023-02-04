@@ -2,12 +2,17 @@ import type { PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from "../store";
 import { createSlice } from "@reduxjs/toolkit";
 
+interface InteresFinalTypes {
+  text:string,
+  data:string,
+}
+
 interface InfletaState {
   cuotas: number;
   inflacion: number;
   precioCuotas: number;
   precioContado: number;
-  precioConInteresFinal:object;
+  precioConInteresFinal:InteresFinalTypes;
 }
 
 const initialState: InfletaState = {
@@ -15,7 +20,7 @@ const initialState: InfletaState = {
   inflacion: 0,
   precioCuotas: 0,
   precioContado: 0,
-  precioConInteresFinal:{ text: "", data: null}
+  precioConInteresFinal:{ text: "", data: ""}
 };
 export const infletaSlice = createSlice({
   name: "infleta",

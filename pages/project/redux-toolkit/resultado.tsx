@@ -42,7 +42,7 @@ const Resultado = () => {
                   <Typography mt={5} variant="h4">
                     precioConInteresFinal:
                     {infletaSelector.precioConInteresFinal?.data}
-                  </Typography>{" "}
+                  </Typography>
                   <Typography mt={5} variant="h4">
                     precioCuotas: {infletaSelector.precioCuotas}
                   </Typography>
