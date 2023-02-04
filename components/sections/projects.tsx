@@ -50,7 +50,7 @@ export const Projects = () => {
               <CardProject
                 title="Redux Toolkit"
                 text="Practica con Redux Toolkit"
-                img={"sleep.png"}
+                img={"infleta.png"}
               />
             </Link>
           </Grid>{" "}

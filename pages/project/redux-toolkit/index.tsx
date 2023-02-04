@@ -1,13 +1,15 @@
-import { Button, Typography } from "@mui/material";
+import { Button, IconButton, Tooltip, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 
 import { APIKEY } from "constants/keys";
 import Box from "@mui/material/Box";
 import FormControl from "@mui/material/FormControl";
+import InfoIcon from "@mui/icons-material/Info";
 import InputLabel from "@mui/material/InputLabel";
 import Link from "next/link";
 import MenuItem from "@mui/material/MenuItem";
+import { PortfolioLayout } from "@/components/layout";
 import Select from "@mui/material/Select";
 import { SelectChangeEvent } from "@mui/material/Select";
 import TextField from "@mui/material/TextField";
@@ -51,8 +53,8 @@ const ReduxToolkit = () => {
         precioCuotas: precioCuotas,
         precioContado: precioContado,
         precioConInteresFinal: {
-          data: precioConInteres,
-          text: precioConInteres < precioCuotas * 1 ? "contado" : "cuotas",
+          data: Math.round(precioConInteres*100)/100,
+          text: precioConInteres < precioCuotas * 1 ? "Contado" : "Cuotas",
         },
       })
     );
@@ -70,70 +72,100 @@ const ReduxToolkit = () => {
 
   return (
     <>
-      <form>
-        <Box sx={{ maxWidth: 520 }}>
-          <FormControl fullWidth>
-            <TextField
-              required
-              id="precio-contado"
-              label="Ingresá el precio de contado"
-              variant="outlined"
-              type="number"
-              onChange={(event) => setPrecioContado(event.target.value)}
-            />
-          </FormControl>
-          <FormControl fullWidth>
-            <TextField
-              required
-              id="precio-cuotas"
-              label="Ingresá el precio total en cuotas"
-              variant="outlined"
-              type="number"
-              onChange={(event) => setPrecioCuotas(event.target.value)}
-            />
-          </FormControl>
-          <FormControl fullWidth>
-            <TextField
-              required
-              id="inflacion-id"
-              label="Inflación mensual estimada"
-              variant="outlined"
-              type="number"
-              onChange={(event) => setInflacion(event.target.value)}
-            />
-          </FormControl>
-
-          <FormControl fullWidth>
-            <InputLabel id="demo-simple-select-label">
-              CuotasCantidad de cuotas
-            </InputLabel>
-            <Select
-              required
-              labelId="demo-simple-select-label"
-              id="demo-simple-select"
-              value={cuotas}
-              label="cuotas"
-              onChange={handleChange}
-            >
-              <MenuItem value={3}>3 cuotas</MenuItem>
-              <MenuItem value={6}>6 cuotas</MenuItem>
-              <MenuItem value={12}>12 cuotas</MenuItem>
-            </Select>
-          </FormControl>
-        </Box>
-        <Button
-          disabled={buttonDisabled}
-          variant={"contained"}
-          onClick={handleClick}
-          color="primary"
+      <PortfolioLayout
+        title={"redux toolkit"}
+        pageDescription={"redux toolkit"}
+      >
+        <Box
+          display={"flex"}
+          width={"100%"}
+          alignContent={"center"}
+          textAlign="center"
+          alignItems="center"
+          justifyContent={"center"}
+          m={"auto"}
+          minHeight={"90vh"}
         >
-          <Link href={"redux-toolkit/resultado"}>
-            <Typography color={buttonDisabled ? "primary" : "white"}>
-              Calcular
+          <Box minHeight={"600px"} sx={{ width: "600px" }}>
+            <Typography variant="h3" sx={{ marginBottom: 5 }}>
+              Calcula si pagar en cuotas o de contado{" "}
+              <Tooltip title="Practica para el manejo de estados con Redux-toolkit">
+                <IconButton>
+                  <InfoIcon />
+                </IconButton>
+              </Tooltip>
             </Typography>
-          </Link>
-        </Button>
-      </form>
+            <form>
+              <Box sx={{ maxWidth: "100%", mx:"22px" }}>
+                <FormControl fullWidth sx={{ marginBottom: 2 }}>
+                  <TextField
+                    required
+                    id="precio-contado"
+                    label="Ingresá el precio de contado"
+                    variant="outlined"
+                    type="number"
+                    onChange={(event: any) =>
+                      setPrecioContado(event.target.value)
+                    }
+                  />
+                </FormControl>
+                <FormControl fullWidth sx={{ marginBottom: 2 }}>
+                  <TextField
+                    required
+                    id="precio-cuotas"
+                    label="Ingresá el precio total en cuotas"
+                    variant="outlined"
+                    type="number"
+                    onChange={(event: any) =>
+                      setPrecioCuotas(event.target.value)
+                    }
+                  />
+                </FormControl>
+                <FormControl fullWidth sx={{ marginBottom: 2 }}>
+                  <TextField
+                    required
+                    id="inflacion-id"
+                    label="Inflación mensual estimada"
+                    variant="outlined"
+                    type="number"
+                    onChange={(event: any) => setInflacion(event.target.value)}
+                  />
+                </FormControl>
+
+                <FormControl fullWidth sx={{ marginBottom: 2 }}>
+                  <InputLabel id="demo-simple-select-label">
+                    CuotasCantidad de cuotas
+                  </InputLabel>
+                  <Select
+                    required
+                    labelId="demo-simple-select-label"
+                    id="demo-simple-select"
+                    value={cuotas}
+                    label="cuotas"
+                    onChange={handleChange}
+                  >
+                    <MenuItem value={3}>3 cuotas</MenuItem>
+                    <MenuItem value={6}>6 cuotas</MenuItem>
+                    <MenuItem value={12}>12 cuotas</MenuItem>
+                  </Select>
+                </FormControl>
+              </Box>
+              <Button
+                disabled={buttonDisabled}
+                variant={"contained"}
+                onClick={handleClick}
+                color="primary"
+              >
+                <Link href={"redux-toolkit/resultado"}>
+                  <Typography color={buttonDisabled ? "primary" : "white"}>
+                    Calcular
+                  </Typography>
+                </Link>
+              </Button>
+            </form>
+          </Box>
+        </Box>
+      </PortfolioLayout>
     </>
   );
 };
