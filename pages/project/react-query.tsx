@@ -1,16 +1,24 @@
 import { Box, Button, Grid, Pagination, Typography } from "@mui/material";
-import React, { useState } from "react";
+import { QueryFunctionContext, useQuery } from "react-query";
+import React, {FC, useState} from "react";
 
 import AlertDialogSlide from "@/components/ui/AlertDialogSlide";
 import CardMui from "@/components/ui/CardMui";
 import { PortfolioLayout } from "@/components/layout";
 import { ReactQueryDevtools } from "react-query/devtools";
-import { useQuery } from "react-query";
+
+interface Product {
+id: number,
+name: string,
+description: string,
+image: string,
+price: string,
+category: string,
+}
 
 const ReactQuery = () => {
   const [page, setPage] = useState(1);
-  const getProducts = async ({ queryKey }) => {
-    console.log(queryKey[1]);
+  const getProducts = async ({ queryKey }: QueryFunctionContext<[string, number | null | undefined]>) => {
 
     const response = await fetch(
       `https://peticiones.online/api/products?page=${queryKey[1]}`
@@ -36,7 +44,7 @@ const ReactQuery = () => {
         {status === "error" ? <p>Error</p> : <></>}
         <h2>Lista de productos</h2>
         <Grid container spacing={3} minHeight={"90vh"}>
-          {data?.results.map((product) => (
+          {data?.results.map((product: Product) => (
             <Grid item xs={12} sm={6} md={4} key={product.id}>
               <CardMui
                 title={product.name}

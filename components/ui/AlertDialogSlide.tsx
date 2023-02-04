@@ -18,7 +18,13 @@ const Transition = React.forwardRef(function Transition(
   return <Slide direction="up" ref={ref} {...props} />;
 });
 
-export default function AlertDialogSlide({name,title,description}) {
+interface PropTypes {
+  name: string,
+  title: string,
+  description: string,
+}
+
+  const AlertDialogSlide : React.FC<PropTypes> = ({name,title,description}) => {
   const [open, setOpen] = React.useState(false);
 
   const handleClickOpen = () => {
@@ -55,3 +61,5 @@ export default function AlertDialogSlide({name,title,description}) {
     </div>
   );
 }
+
+export default AlertDialogSlide;

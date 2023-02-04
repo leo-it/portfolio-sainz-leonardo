@@ -1,9 +1,15 @@
 import { Box, Button, Typography } from "@mui/material";
 
+import {FC} from 'react';
 import Image from "next/image";
-import React from "react";
 
-const CardProject = ({ img, text, title }) => {
+interface PropTypes {
+  img: string,
+  text:string,
+  title:string,
+}
+
+const CardProject:  FC<PropTypes> = ({ img, text, title }) => {
   return (
     <div>
       <Box className="view view-tenth">
