@@ -8,7 +8,7 @@ import React from "react";
 import Typography from "@mui/material/Typography";
 import { useAppSelector } from "@/redux/hooks";
 
-const resultado = () => {
+const Resultado = () => {
   const infletaSelector = useAppSelector((state) => state.infleta);
   console.log(infletaSelector);
 
@@ -84,4 +84,4 @@ const resultado = () => {
   );
 };
 
-export default resultado;
+export default Resultado;

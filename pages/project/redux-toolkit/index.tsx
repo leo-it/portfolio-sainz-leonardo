@@ -19,15 +19,15 @@ import { saveInfletaData } from "@/redux/slices/infleta";
 const ReduxToolkit = () => {
   const dispatch = useAppDispatch();
 
-  const [cuotas, setCuotas] = React.useState("");
-  const [inflacion, setInflacion] = useState();
+  const [cuotas, setCuotas] = React.useState(0);
+  const [inflacion, setInflacion] = useState(0);
   const [precioCuotas, setPrecioCuotas] = useState(0);
-  const [precioContado, setPrecioContado] = useState();
+  const [precioContado, setPrecioContado] = useState(0);
   const [buttonDisabled, setButtonDisabled] = useState(true);
   const [calculoActive, setcalculoActive] = useState(false);
   const [precioConInteresFinal, setPrecioConInteresFinal] = useState({});
   const handleChange = (event: SelectChangeEvent) => {
-    setCuotas(event.target.value as string);
+    setCuotas(Number(event.target.value));
   };
   useEffect(() => {
     if (cuotas && inflacion && precioCuotas && precioContado) {
@@ -146,7 +146,7 @@ const ReduxToolkit = () => {
                     required
                     labelId="demo-simple-select-label"
                     id="demo-simple-select"
-                    value={cuotas}
+                    value={String(cuotas)}
                     label="cuotas"
                     onChange={handleChange}
                   >

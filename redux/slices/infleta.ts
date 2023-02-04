@@ -15,7 +15,7 @@ const initialState: InfletaState = {
   inflacion: 0,
   precioCuotas: 0,
   precioContado: 0,
-  precioConInteresFinal:{}
+  precioConInteresFinal:{ text: "", data: null}
 };
 export const infletaSlice = createSlice({
   name: "infleta",
