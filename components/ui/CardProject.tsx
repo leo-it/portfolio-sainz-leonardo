@@ -1,12 +1,13 @@
 import { Box, Button, Typography } from "@mui/material";
 
+import Image from "next/image";
 import React from "react";
 
 const CardProject = ({ img, text, title }) => {
   return (
     <div>
       <Box className="view view-tenth">
-        <img src={`/img/projects/${img}`} height="300" width="380" />
+        <Image alt="proyecto" src={`/img/projects/${img}`} height="300" width="380" />
         <Box className="mask">
           <Typography variant="h5" color={"white"} marginTop={5}>
             {title}

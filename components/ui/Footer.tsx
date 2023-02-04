@@ -27,17 +27,17 @@ const Footer = () => {
       </Box>
       <Box display={"flex"} justifyContent="center">
         <Box width={44} height={44}>
-          <a target="_blank"  href="https://www.linkedin.com/in/leonardo-sainz/">
+          <a rel="noreferrer" target="_blank"  href="https://www.linkedin.com/in/leonardo-sainz/">
             <LinkedInIcon color="info" fontSize="large" />{" "}
           </a>
         </Box>
         <Box width={44} height={44}>
-          <a target="_blank" href="https://github.com/leo-it">
+          <a rel="noreferrer" target="_blank" href="https://github.com/leo-it">
             <GitHubIcon color="info" fontSize="large" />
           </a>
         </Box>
         <Box width={44} height={44}>
-          <a target="_blank" href="mailto:lsainzveron@gmail.com">
+          <a rel="noreferrer" target="_blank" href="mailto:lsainzveron@gmail.com">
             <AttachEmailIcon color="info" fontSize="large" />
           </a>
         </Box>
