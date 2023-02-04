@@ -21,7 +21,7 @@ export const Projects = () => {
           My Projects
         </Typography>
         <Typography variant="h3" marginTop={10} marginBottom={5}>
-          Here are a few past design projects I've worked on.
+          Here are a few past design projects I&quotve worked on.
         </Typography>
         <Grid container spacing={3}>
           {/* todo ver cards de codepen por ahi son mas esteticas
