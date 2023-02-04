@@ -31,7 +31,7 @@ export default function AlertDialogSlide({name,title,description}) {
 
   return (
     <div>
-      <Button variant="outlined" onClick={handleClickOpen}>
+      <Button sx={{ml:3}} variant="outlined" onClick={handleClickOpen}>
        {name}
       </Button>
       <Dialog

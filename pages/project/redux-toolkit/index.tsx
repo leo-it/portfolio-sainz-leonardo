@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 
 import { APIKEY } from "constants/keys";
+import AlertDialogSlide from "@/components/ui/AlertDialogSlide";
 import Box from "@mui/material/Box";
 import FormControl from "@mui/material/FormControl";
 import InfoIcon from "@mui/icons-material/Info";
@@ -15,9 +16,7 @@ import { SelectChangeEvent } from "@mui/material/Select";
 import TextField from "@mui/material/TextField";
 import { saveInfletaData } from "@/redux/slices/infleta";
 
-const ipCountry = "37.140.128.10";
 const ReduxToolkit = () => {
-  const cuotasRedux = useAppSelector((state) => state.infleta);
   const dispatch = useAppDispatch();
 
   const [cuotas, setCuotas] = React.useState("");
@@ -53,7 +52,7 @@ const ReduxToolkit = () => {
         precioCuotas: precioCuotas,
         precioContado: precioContado,
         precioConInteresFinal: {
-          data: Math.round(precioConInteres*100)/100,
+          data: Math.round(precioConInteres * 100) / 100,
           text: precioConInteres < precioCuotas * 1 ? "Contado" : "Cuotas",
         },
       })
@@ -76,6 +75,13 @@ const ReduxToolkit = () => {
         title={"redux toolkit"}
         pageDescription={"redux toolkit"}
       >
+        <AlertDialogSlide
+          name={"Descripcion de seccion"}
+          title={"Redux toolkit"}
+          description={
+            "Redux toolkit es una alternativa a redux que reduce el codigo repetitivo, simplifica la configuracon y Elimina la necesidad de agregar múltiples paquetes para tener una aplicación escalable."
+          }
+        />
         <Box
           display={"flex"}
           width={"100%"}
@@ -96,7 +102,7 @@ const ReduxToolkit = () => {
               </Tooltip>
             </Typography>
             <form>
-              <Box sx={{ maxWidth: "100%", mx:"22px" }}>
+              <Box sx={{ maxWidth: "100%", mx: "22px" }}>
                 <FormControl fullWidth sx={{ marginBottom: 2 }}>
                   <TextField
                     required
