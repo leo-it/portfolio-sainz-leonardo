@@ -63,7 +63,7 @@ export const AboutMe = () => {
               la oportunidad de trabajar para una software factory increible en
               la que use las mejores tecnologias para el frontend. Actualmente
               trabajo para Accenture en conjunto con el banco Galicia como
-              desarrollador fullstack con Nextjs y Nesjs. En ambas empresas
+              desarrollador fullstack con Nextjs y Nestjs. En ambas empresas
               trabaje con personas talentosas y confiables.
               <br/> Estoy contento con lo que hago y trabajo constantemente para mejorar mis habilidades.
             </Typography>

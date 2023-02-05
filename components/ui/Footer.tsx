@@ -20,9 +20,12 @@ const Footer = () => {
         minHeight: { xs: "20vh", md: "30vh" },
       }}
     >
-      <Box paddingY={5}>
+      <Box paddingTop={5} paddingBottom={3}>
         <Typography variant="h3" color={"white"}>
-          contactame
+          Contactame
+        </Typography>
+        <Typography pt="5px" variant="h4" color={"white"}>
+          lsainzveron@gmail.com
         </Typography>
       </Box>
       <Box display={"flex"} justifyContent="center">

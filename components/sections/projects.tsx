@@ -76,7 +76,7 @@ export const Projects = () => {
               alt="alkemy-proyecto-final"
               modalUrl="https://www.youtube.com/embed/C-b-SEvSTXQ"
               title="Alkemy ONG"
-              text="Proyecto grupal que cuenta una vista para usuarios normales, un backoffice para el admin y por detras el backend en Nodejs"
+              text="Proyecto grupal que cuenta una vista para usuarios normales, un backoffice para el admin y el backend en Nodejs"
               img={"/img/projects/alkemyFinal.png"}
             />
           </Grid>
