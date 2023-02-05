@@ -9,7 +9,7 @@ export const Tecnologies = () => {
       <Box
         style={{
           /*     maxWidth: "1341px", */
-          height: "500px",
+          minHeight: "500px",
           padding: "0px 0px",
         }}
         justifyContent="center"
