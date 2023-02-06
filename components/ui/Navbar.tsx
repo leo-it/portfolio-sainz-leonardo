@@ -47,7 +47,7 @@ export default function Navbar(props: Props) {
       <List>
         <ListItem key={"1"} disablePadding>
           <ListItemButton sx={{ textAlign: "center" }}>
-            <Link href="mailto:lsainzveron@gmail.com">
+            <Link href="#footer">
               <Box display="flex">
                 <Typography align="center" justifyContent={"center"} my="auto">
                   Contacto
@@ -92,7 +92,7 @@ export default function Navbar(props: Props) {
               </IconButton>
             </Tooltip>
             <Button key={"item"} sx={{ color: "#fff" }}>
-              <Link href="/">
+              <Link href="#footer">
                 <Box display="flex">
                   <Typography
                     align="center"

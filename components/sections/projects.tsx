@@ -41,6 +41,25 @@ export const Projects = () => {
               img={"/img/projects/sleepy.png"}
             />
           </Grid>
+         
+          <Grid item xs={12} sm={4}>
+            <CardProjectMui
+              alt="clon-mercado-libre"
+              modalUrl="https://www.youtube.com/embed/fi6LKMdFnCM"
+              title="Clon de Mercado Libre"
+              text="Para esta practica use Tailwind, Nextjs y Redux Toolkit"
+              img={"/img/projects/meli.png"}
+            />
+          </Grid>
+          <Grid item xs={12} sm={4}>
+            <CardProjectMui
+              alt="alkemy-proyecto-final"
+              modalUrl="https://www.youtube.com/embed/C-b-SEvSTXQ"
+              title="Alkemy ONG"
+              text="Proyecto grupal que cuenta una vista para usuarios normales, un backoffice para el admin y el backend en Nodejs"
+              img={"/img/projects/alkemyFinal.png"}
+            />
+          </Grid>
           <Grid item xs={12} sm={4}>
             <CardProjectMui
               alt="react-query"
@@ -61,25 +80,8 @@ export const Projects = () => {
               img={"/img/projects/infleta.png"}
             />
           </Grid>
-          <Grid item xs={12} sm={4}>
-            <CardProjectMui
-              alt="clon-mercado-libre"
-              modalUrl="https://www.youtube.com/embed/fi6LKMdFnCM"
-              title="Clon de Mercado Libre"
-              text="Para esta practica use Tailwind, Nextjs y Redux Toolkit"
-              img={"/img/projects/meli.png"}
-            />
-          </Grid>
 
-          <Grid item xs={12} sm={4}>
-            <CardProjectMui
-              alt="alkemy-proyecto-final"
-              modalUrl="https://www.youtube.com/embed/C-b-SEvSTXQ"
-              title="Alkemy ONG"
-              text="Proyecto grupal que cuenta una vista para usuarios normales, un backoffice para el admin y el backend en Nodejs"
-              img={"/img/projects/alkemyFinal.png"}
-            />
-          </Grid>
+         
           <Grid item xs={12} sm={4}>
             <CardProjectMui
               alt="money-calc"

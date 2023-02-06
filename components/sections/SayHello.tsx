@@ -24,13 +24,21 @@ export const SayHello = () => {
                 lg: 90,
                 md: 80,
                 sm: 65,
-                xs: 40,
+                xs: 30,
               },
             }}
           >
             Frontend Developer
           </Typography>
           <Typography
+           sx={{
+            fontSize: {
+              lg: 70,
+                md: 45,
+                sm: 45,
+              xs: 22,
+            },
+          }}
             variant="h3"
             color=" rgba(10, 10, 10, 0.9);
             }"

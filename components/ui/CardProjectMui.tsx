@@ -40,7 +40,8 @@ const CardProjectMui: FC<Props> = ({
   img,
   link,
   modalUrl,
-  target,alt
+  target,
+  alt,
 }) => {
   console.log(link);
 
@@ -51,16 +52,16 @@ const CardProjectMui: FC<Props> = ({
   };
 
   return (
-    <Card sx={{ maxWidth: 345, minHeight: 450 }}>
+    <Card sx={{ maxWidth: 345, minHeight: 550 }}>
       <CardHeader />
       <Typography minHeight={"70px"} variant="h3" color="text.secondary">
         {title}
       </Typography>
 
-      <CardMedia  component="img" height="194" image={img} alt={alt} />
+      <CardMedia component="img" height="284" image={img} alt={alt} />
 
-      <CardContent sx={{marginTop:2}}>
-        <Typography variant="body2" color="text.secondary">
+      <CardContent sx={{ marginTop: 2 }}>
+        <Typography pb="15px" variant="body2" color="text.secondary">
           {text}
         </Typography>
         {modalUrl ? (
@@ -69,37 +70,12 @@ const CardProjectMui: FC<Props> = ({
           <>
             <Button>
               <Link target={target} href={`${link}`}>
-                Ver más
+                Ver web
               </Link>
             </Button>
           </>
         )}
       </CardContent>
-      {/* <CardActions disableSpacing>
-        <IconButton aria-label="add to favorites">
-          <FavoriteIcon />
-        </IconButton>
-        <IconButton aria-label="share">
-          <ShareIcon />
-        </IconButton>
-        <ExpandMore
-          expand={expanded}
-          onClick={handleExpandClick}
-          aria-expanded={expanded}
-          aria-label="show more"
-        >
-          <ExpandMoreIcon />
-        </ExpandMore>
-      </CardActions> */}
-      {/*  <Collapse in={expanded} timeout="auto" unmountOnExit>
-        <CardContent>
-          <Typography paragraph>price: ${price}</Typography>
-          <Typography paragraph>Categoria: {category}</Typography>{" "}
-          <Typography paragraph>
-            Las mejores prendas para vestir este verano
-          </Typography>
-        </CardContent>
-      </Collapse> */}
     </Card>
   );
 };

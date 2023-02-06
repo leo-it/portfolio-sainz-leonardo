@@ -7,7 +7,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <Box
+    <Box 
       bgcolor={"#6E07F3"}
       style={{
       }}
@@ -21,7 +21,7 @@ const Footer = () => {
       }}
     >
       <Box paddingTop={5} paddingBottom={3}>
-        <Typography variant="h3" color={"white"}>
+        <Typography id="footer" variant="h3" color={"white"}>
           Contactame
         </Typography>
         <Typography pt="5px" variant="h4" color={"white"}>

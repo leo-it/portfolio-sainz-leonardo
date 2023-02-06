@@ -29,7 +29,7 @@ const ModalMui: FC<Props> = ({ modalUrl }) => {
 
   return (
     <div>
-      <Button onClick={handleOpen}>VER MÁS</Button>
+      <Button onClick={handleOpen}>VER VIDEO</Button>
       <Modal
         open={open}
         onClose={handleClose}
