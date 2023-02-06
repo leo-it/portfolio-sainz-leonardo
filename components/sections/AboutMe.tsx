@@ -18,7 +18,7 @@ export const AboutMe = () => {
             sx={{
               mx: "auto",
               mt: { xs: 7 },
-              width: { xs: 340, sm: "1229px" },
+              width: { xs: 340, sm: "100%" },
               height: { xs: 130, sm: 400 },
               position: "relative",
             }}
