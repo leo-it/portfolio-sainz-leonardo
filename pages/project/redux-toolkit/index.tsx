@@ -38,7 +38,6 @@ const ReduxToolkit = () => {
   }, [cuotas, inflacion, precioCuotas, precioContado]);
 
   const handleClick = () => {
-    console.log(precioConInteresFinal);
     setcalculoActive(true);
     const precioConInteres = checkPaymentOption(
       precioContado,

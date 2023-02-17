@@ -10,8 +10,6 @@ import { useAppSelector } from "@/redux/hooks";
 
 const Resultado = () => {
   const infletaSelector = useAppSelector((state) => state.infleta);
-  console.log(infletaSelector);
-
   return (
     <PortfolioLayout title={"redux toolkit"} pageDescription={"redux toolkit"}>
       <AlertDialogSlide

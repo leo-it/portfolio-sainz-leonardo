@@ -1,16 +1,34 @@
 import { AboutMe, SayHello, Tecnologies } from "@/components/sections";
-import { Box, Button, Typography } from "@mui/material";
+import {
+  addDoc,
+  collection,
+  deleteDoc,
+  doc,
+  getDoc,
+  getDocs,
+  getFirestore,
+  setDoc,
+} from "firebase/firestore";
 
+import { Box } from "@mui/material";
+import FormOpinions from "@/components/ui/formOpinions";
+import { GetServerSideProps } from "next";
 import { PortfolioLayout } from "@/components/layout";
 import { Projects } from "@/components/sections/projects";
+import firebaseApp from "@/firebase";
 
-export default function Home() {
+const db = getFirestore(firebaseApp);
+
+export default function Home(props) {
+  console.log(props);
+
   return (
     <>
       <PortfolioLayout
         title={"Portfolio"}
         pageDescription={"Portafolio descripcion"}
       >
+        <FormOpinions />
         <Box
           style={{
             margin: "80px auto",
@@ -39,3 +57,19 @@ export default function Home() {
     </>
   );
 }
+
+export const getServerSideProps: GetServerSideProps = async (context) => {
+  console.log(context);
+
+  const querySnapshot = await getDocs(collection(db, "opinion"));
+  const docs: any = [];
+  querySnapshot.forEach((doc) => {
+    docs.push({ ...doc.data(), id: doc.id });
+  });
+
+  return {
+    props: {
+      opinions: docs,
+    },
+  };
+};

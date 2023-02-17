@@ -43,8 +43,6 @@ const CardProjectMui: FC<Props> = ({
   target,
   alt,
 }) => {
-  console.log(link);
-
   const [expanded, setExpanded] = useState(false);
 
   const handleExpandClick = () => {
