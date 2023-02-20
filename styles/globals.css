@@ -8,7 +8,59 @@ a:visited,
 a:active {
   text-decoration: none;
 }
-
+/* -------------fonts------------------ */
+h1 {
+  font-size: 30px;
+  margin: 0;
+}
+h2 {
+  font-size: 28px;
+}
+h3 {
+  font-size: 16px;
+  margin: 0;
+}
+h4 {
+  font-size: 14px;
+  margin: 0;
+}
+h5 {
+  font-size: 12px;
+  margin: 0;
+}
+@media (min-width: 600px) {
+  h1 {
+    font-size: 70px;
+    line-height: 45px;
+    margin: 0;
+  }
+  h2 {
+    font-size: 55px;
+    line-height: 45px;
+    margin: 0;
+  }
+  h3 {
+    font-size: 28px;
+    line-height: 40px;
+    margin: 0;
+  }
+  h4 {
+    font-size: 24px;
+    line-height: 35px;
+    margin: 0;
+  }
+  h5 {
+    font-size: 18px;
+    line-height: 25px;
+    margin: 0;
+  }
+  h6 {
+    font-size: 16px;
+    line-height: 25px;
+    margin: 0;
+  }
+}
+/* -------fonts end---------------- */
 /* ------------- project card -------------- */
 .view {
   width: 380px;
@@ -88,7 +140,6 @@ a:active {
   transform: scale(1);
   opacity: 1;
 }
-
 
 /* -----CardUsersSay__box----------- */
 .circle__border {

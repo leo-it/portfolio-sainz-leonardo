@@ -26,7 +26,7 @@ export const FormOpinions = () => {
   const initialValues = {
     name: "",
     description: "",
-    stars: 0,
+    stars: null,
   };
 
   const handleActiveStars = (i) => {
@@ -92,7 +92,6 @@ export const FormOpinions = () => {
         enableReinitialize
       >
         {(formik) => {
-          /* console.log("Formik props", formik); */
           return (
             <Form>
               <Box maxWidth={"500px"}>
@@ -124,6 +123,7 @@ export const FormOpinions = () => {
                   label="Nombre"
                 />
                 <ErrorMessage name="name" component={TextError} />
+                <Box marginTop={"15px"}></Box>
                 <Field
                   component={MyTextField}
                   required

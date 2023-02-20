@@ -1,12 +1,13 @@
-import { Box, Typografy } from "@mui/material";
-import React, { useEffect, useState } from "react";
-
+import { Box } from "@mui/material";
 import { CardUsersSay } from "./CardUsersSay";
 import { Carousel } from "./Carousel";
+import React from "react";
+import imageOne from "../../public/img/userSay.png"
 
 /* import imageOne from "../../public/img/users/user2.webp"
  */
 export const Opinions = ({ opinions }) => {
+  
   return (
     <Box
       sx={{
@@ -19,7 +20,7 @@ export const Opinions = ({ opinions }) => {
           {opinions?.map((opinion) => (
             <Box sx={{ display: "flex" }} className="keen-slider__slide ">
               <CardUsersSay
-                /* profilePicture={imageOne} */
+                profilePicture={imageOne}
                 fullname={opinion.name}
                 /*  country={"UK"} */
                 stars={opinion.stars}
@@ -41,7 +42,7 @@ export const Opinions = ({ opinions }) => {
           <>
             <Box sx={{ display: "flex" }} className="keen-slider__slide ">
               <CardUsersSay
-                /* profilePicture={imageOne} */
+                profilePicture={imageOne}
                 fullname={"Cargando..."}
                 /*  country={"UK"} */
                 stars={4}
@@ -50,7 +51,7 @@ export const Opinions = ({ opinions }) => {
             </Box>{" "}
             <Box sx={{ display: "flex" }} className="keen-slider__slide ">
               <CardUsersSay
-                /* profilePicture={imageOne} */
+                profilePicture={imageOne}
                 fullname={"Cargando..."}
                 /*  country={"UK"} */
                 stars={4}

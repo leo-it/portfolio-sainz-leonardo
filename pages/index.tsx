@@ -17,28 +17,7 @@ export default function Home({ opinions }) {
         title={"Portfolio"}
         pageDescription={"Portafolio descripcion"}
       >
-        <Box
-          style={{
-            margin: "80px auto",
-            maxWidth: "1440px",
-            padding: "0px 30px",
-          }}
-        >
-          <Typography
-            textAlign={"center"}
-            sx={{ mb: { xs: "20px", md: "100px" } }}
-            marginBottom={"20px"}
-            variant="h2"
-            fontWeight={"bold"}
-          >
-            ¿Que te parecio mi web?
-          </Typography>
-          <Box sx={{ display: { xs: "block", md: "flex" } }}>
-            <Opinions opinions={opinions} />
-            <Box ml="80px"></Box>
-            <FormOpinions />
-          </Box>
-        </Box>
+      
 
         <Box
           style={{
@@ -63,6 +42,28 @@ export default function Home({ opinions }) {
           }}
         >
           <Projects />
+        </Box>
+        <Box
+          style={{
+            margin: "80px auto",
+            maxWidth: "1440px",
+            padding: "0px 30px",
+          }}
+        >
+          <Typography
+            textAlign={"center"}
+            sx={{ mb: { xs: "20px", md: "100px" } }}
+            marginBottom={"20px"}
+            variant="h2"
+            fontWeight={"bold"}
+          >
+            ¿Que te parecio mi web?
+          </Typography>
+          <Box sx={{ display: { xs: "block", md: "flex" } }}>
+            <Opinions opinions={opinions} />
+            <Box ml="80px"></Box>
+            <FormOpinions />
+          </Box>
         </Box>
       </PortfolioLayout>
     </>

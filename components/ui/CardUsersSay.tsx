@@ -4,21 +4,19 @@ import Image from "next/image";
 import React from "react";
 
 export const CardUsersSay = ({
-  /*  profilePicture, */
+  profilePicture,
   fullname,
   stars,
   description,
 }) => {
-  const starsUi=()=>{
-<Box>asd</Box>
-  }
+  
   return (
     <Box
       sx={{
         width: { xs: "265px", md: "358px" },
-        height: { xs: "290px", md: "465px" },
+        height: { xs: "290px", md: "345px" },
         border: 1.4,
-        color: "rgb(125, 125, 160)",
+        color: "#6e07f3",
         borderRadius: "16px",
         display: "flex",
         justifyContent: "center",
@@ -33,18 +31,28 @@ export const CardUsersSay = ({
         }}
       >
         <Box sx={{ display: "flex" }}>
-          <Box sx={{ mt: { xs: 1, md: 0 } }}>
-            <Typography variant="h3" color="black">
+          <Box
+            sx={{
+              mr: { xs: "15px", md: "20px" },
+              width: { xs: "50px", md: "50px" },
+              height: { xs: "50px", md: "50px" },
+              position: "relative",
+            }}
+          >
+            <Image
+              src={profilePicture}
+              alt="border"
+              layout="fill"
+              objectFit="contain"
+              className="circle__border"
+            />
+          </Box>
+
+          <Box color="black" justifyContent={"center"} sx={{ mt: "auto" }}>
+            <h5 >
               {fullname}
-            </Typography>
-            <Box
-              sx={{
-                mb: { xs: "12px", md: "20px" },
-                mt: { xs: "3px", md: "5px" },
-              }}
-            >
-              <h5 className="opacity--7"></h5>
-            </Box>{" "}
+            </h5>
+           
           </Box>
         </Box>
         <Box
@@ -53,31 +61,15 @@ export const CardUsersSay = ({
             my: { xs: "12px", md: "20px" },
           }}
         >
-            <Typography sx={{color: "orange"}} variant="h3" color="black">{"★".repeat(++stars).padEnd(5,"☆")}</Typography>
-          {/*  {stars.map((s) => (
-           <Box
-              sx={{
-                mr: { xs: "10px", md: "20px" },
-                width: {
-                  xs: "20px",
-                  md: "26px",
-                },
-                height: { xs: "20px", md: "26px" },
-                position: "relative",
-              }}
-            >
-              <Image
-                src="/img/star.svg"
-                alt="sobre mi"
-                layout="fill"
-                objectFit="contain"
-              />
-            </Box>
-           
-          ))}*/}
+          <Typography sx={{ color: "orange" }} variant="h3" color="black">
+            {"★".repeat(++stars).padEnd(5, "☆")}
+          </Typography>
+        
         </Box>
+<Box color="#141c3a">
 
-        <Typography color="black">{description}</Typography>
+        <h6  >{description}</h6>
+</Box>
       </Box>
     </Box>
   );
