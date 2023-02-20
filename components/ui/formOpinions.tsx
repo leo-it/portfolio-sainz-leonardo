@@ -78,10 +78,13 @@ export const FormOpinions = () => {
   };
 
   return (
-    <Box>
-      <Typography marginBottom={"20px"} variant="h2" fontWeight={"bold"}>
-        ¿Que te parecio mi web?
-      </Typography>
+    <Box
+      sx={{
+        mx: "auto",
+        mt:{xs:"40px",md:"0px"},
+        width: { xs: "100%", md: "50%" },
+      }}
+    >
       <Formik
         initialValues={/* formValues || */ initialValues}
         validationSchema={validationSchema}
@@ -133,7 +136,8 @@ export const FormOpinions = () => {
                 <ErrorMessage name="description" component={TextError} />
               </Box>
 
-              <Button sx={{mr:3, mt:2}}
+              <Button
+                sx={{ mr: 3, mt: 2 }}
                 variant="contained"
                 onClick={() =>
                   setActiveStars([false, false, false, false, false])
@@ -143,7 +147,8 @@ export const FormOpinions = () => {
               >
                 Reset
               </Button>
-              <Button  sx={{ mt:2}}
+              <Button
+                sx={{ mt: 2 }}
                 variant="contained"
                 color="primary"
                 type="submit"
@@ -177,5 +182,3 @@ export const FormOpinions = () => {
     </Box>
   );
 };
-
- 
