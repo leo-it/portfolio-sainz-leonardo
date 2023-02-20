@@ -1,17 +1,8 @@
 import { AboutMe, SayHello, Tecnologies } from "@/components/sections";
-import {
-  addDoc,
-  collection,
-  deleteDoc,
-  doc,
-  getDoc,
-  getDocs,
-  getFirestore,
-  setDoc,
-} from "firebase/firestore";
+import {FormOpinions, Opinions} from "@/components/ui";
+import { collection, getDocs, getFirestore } from "firebase/firestore";
 
 import { Box } from "@mui/material";
-import FormOpinions from "@/components/ui/formOpinions";
 import { GetServerSideProps } from "next";
 import { PortfolioLayout } from "@/components/layout";
 import { Projects } from "@/components/sections/projects";
@@ -28,7 +19,10 @@ export default function Home(props) {
         title={"Portfolio"}
         pageDescription={"Portafolio descripcion"}
       >
+        <Box sx={{display:{xs:"block",md:"flex"}}}>
+          <Opinions />
         <FormOpinions />
+        </Box>
         <Box
           style={{
             margin: "80px auto",

@@ -1,69 +1,181 @@
+import * as Yup from "yup";
+
+import { ErrorMessage, Field, Form, Formik } from "formik";
 import { addDoc, collection, getFirestore } from "firebase/firestore";
 
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import React from "react";
+import TextError from "./TextError";
+import TextField from "@mui/material/TextField";
 import { Typography } from "@mui/material";
-import firebase from "./../../firebase";
+import firebase from "../../firebase";
 import { useState } from "react";
 
-const FormOpinions = () => {
+export const FormOpinions = () => {
   const db = getFirestore(firebase);
-  const valorInicial = {
+  const [formValues, setFormValues] = useState(null);
+  const [activeStars, setActiveStars] = useState([
+    false,
+    false,
+    false,
+    false,
+    false,
+  ]);
+
+  const initialValues = {
     name: "",
     description: "",
-    stars: null,
-  };
-  const [dato, setDato] = useState(valorInicial);
-
-  const obtenerInputs = (e) => {
-    const { name, value } = e.target;
-    setDato({ ...dato, [name]: value });
+    stars: 0,
   };
 
-  const enviarInfo = async (e) => {
-    e.preventDefault();
+  const handleActiveStars = (i) => {
+    let auxStars = [false, false, false, false, false];
+
+    activeStars.forEach((star, idx) => {
+      auxStars[idx] = idx <= i;
+    });
+
+    setActiveStars(auxStars);
+  };
+
+  const onSubmit = async (values, submitProps) => {
+    /*     console.log("Form data", values);
+     */ // console.log("submitProps", submitProps);
     try {
       await addDoc(collection(db, "opinion"), {
-        ...dato,
+        ...values,
       });
     } catch (error) {
       console.log(error);
     }
+    submitProps.setSubmitting(false);
+    submitProps.resetForm();
+  };
+
+  const validationSchema = Yup.object({
+    name: Yup.string()
+      .min(3, "Tiene al menos 3 caracteres")
+      .max(20, "Tiene que ser máximo 20 caracteres o menos")
+      .required("Campo requerido"),
+    description: Yup.string()
+      .min(3, "Tiene al menos 3 caracteres")
+      .max(200, "Maximo 200 caracteres")
+      .required("Campo requerido"),
+    stars: Yup.number().required("Campo requerido"),
+  });
+
+  const validateComments = (value) => {
+    let error;
+    if (!value) {
+      error = "Required";
+    }
+    return error;
+  };
+
+  const MyTextField = ({ field, form, ...props }) => {
+    return <TextField {...field} {...props} />;
   };
 
   return (
     <Box>
-     <Typography variant="h2" fontWeight={"bold"}>¿Que te parecio mi web?</Typography>
-      <form onSubmit={enviarInfo}>
-        <input
-          type="text"
-          placeholder="nombre"
-          name="name"
-          value={dato.name}
-          onChange={(e) => obtenerInputs(e)}
-          required
-        />
-        <input
-          type="text"
-          placeholder="Descripcion"
-          name="description"
-          value={dato.description}
-          onChange={(e) => obtenerInputs(e)}
-          required
-        />
-        <input
-          type="text"
-          placeholder="estrellas"
-          name="stars"
-          value={dato.stars}
-          onChange={(e) => obtenerInputs(e)}
-          required
-        />
-        <button>enviar</button>
-      </form>
+      <Typography marginBottom={"20px"} variant="h2" fontWeight={"bold"}>
+        ¿Que te parecio mi web?
+      </Typography>
+      <Formik
+        initialValues={/* formValues || */ initialValues}
+        validationSchema={validationSchema}
+        onSubmit={onSubmit}
+        enableReinitialize
+      >
+        {(formik) => {
+          /* console.log("Formik props", formik); */
+          return (
+            <Form>
+              <Box maxWidth={"500px"}>
+                <div role="group" aria-labelledby="my-radio-group">
+                  {activeStars.map((star, idx) => (
+                    <label
+                      className={`label--star ${
+                        activeStars[idx] && "activeStar"
+                      }`}
+                    >
+                      <Field
+                        onClick={() => handleActiveStars(idx)}
+                        type="radio"
+                        name="stars"
+                        value={idx}
+                      />
+                      ★
+                    </label>
+                  ))}
+                </div>
+
+                <Field
+                  component={MyTextField}
+                  required
+                  fullWidth
+                  id="name"
+                  name="name"
+                  type="text"
+                  label="Nombre"
+                />
+                <ErrorMessage name="name" component={TextError} />
+                <Field
+                  component={MyTextField}
+                  required
+                  fullWidth
+                  id="description"
+                  name="description"
+                  type="text"
+                  label="Descripcion"
+                />
+                <ErrorMessage name="description" component={TextError} />
+              </Box>
+
+              <Button sx={{mr:3, mt:2}}
+                variant="contained"
+                onClick={() =>
+                  setActiveStars([false, false, false, false, false])
+                }
+                color="error"
+                type="reset"
+              >
+                Reset
+              </Button>
+              <Button  sx={{ mt:2}}
+                variant="contained"
+                color="primary"
+                type="submit"
+                disabled={!formik.isValid || formik.isSubmitting}
+              >
+                Submit
+              </Button>
+            </Form>
+          );
+        }}
+      </Formik>
+      <style jsx global>
+        {`
+          .label--star {
+            font-size: 40px;
+          }
+
+          input[type="radio"] {
+            display: none;
+          }
+
+          .label--star {
+            color: grey;
+          }
+
+          .activeStar {
+            color: orange;
+          }
+        `}
+      </style>
     </Box>
   );
 };
 
-export default FormOpinions;
+ 
