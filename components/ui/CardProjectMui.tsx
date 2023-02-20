@@ -10,6 +10,7 @@ import Link from "next/link";
 import ModalMui from "./ModalMui";
 import Typography from "@mui/material/Typography";
 import { styled } from "@mui/material/styles";
+import { useRouter } from "next/router";
 
 interface ExpandMoreProps extends IconButtonProps {
   expand: boolean;
@@ -43,6 +44,7 @@ const CardProjectMui: FC<Props> = ({
   target,
   alt,
 }) => {
+  const router = useRouter()
   const [expanded, setExpanded] = useState(false);
 
   const handleExpandClick = () => {
@@ -59,17 +61,15 @@ const CardProjectMui: FC<Props> = ({
       <CardMedia component="img" height="284" image={img} alt={alt} />
 
       <CardContent sx={{ marginTop: 2 }}>
-        <Typography pb="15px" variant="body2" color="text.secondary">
+        <Typography sx={{minHeight: 95}} pb="15px" variant="body2" color="text.secondary">
           {text}
         </Typography>
         {modalUrl ? (
           <ModalMui modalUrl={modalUrl} />
         ) : (
           <>
-            <Button>
-              <Link target={target} href={`${link}`}>
+            <Button onClick={()=> router.push(`${link}`)}>
                 Ver web
-              </Link>
             </Button>
           </>
         )}
