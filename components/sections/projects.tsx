@@ -1,10 +1,6 @@
 import { Box, Grid, Typography } from "@mui/material";
 
-import CardProject from "../ui/CardProject";
 import CardProjectMui from "../ui/CardProjectMui";
-import Image from "next/image";
-import Link from "next/link";
-import React from "react";
 
 export const Projects = () => {
   return (
@@ -41,7 +37,7 @@ export const Projects = () => {
               img={"/img/projects/sleepy.png"}
             />
           </Grid>
-         
+
           <Grid item xs={12} sm={4}>
             <CardProjectMui
               alt="clon-mercado-libre"
@@ -81,7 +77,6 @@ export const Projects = () => {
             />
           </Grid>
 
-         
           <Grid item xs={12} sm={4}>
             <CardProjectMui
               alt="money-calc"

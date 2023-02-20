@@ -6,7 +6,6 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardHeader from "@mui/material/CardHeader";
 import CardMedia from "@mui/material/CardMedia";
-import Link from "next/link";
 import ModalMui from "./ModalMui";
 import Typography from "@mui/material/Typography";
 import { styled } from "@mui/material/styles";
