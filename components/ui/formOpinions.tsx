@@ -145,7 +145,7 @@ export const FormOpinions = () => {
                 color="error"
                 type="reset"
               >
-                Reset
+                Reiniciar
               </Button>
               <Button
                 sx={{ mt: 2 }}
@@ -154,7 +154,7 @@ export const FormOpinions = () => {
                 type="submit"
                 disabled={!formik.isValid || formik.isSubmitting}
               >
-                Submit
+                Publicar
               </Button>
             </Form>
           );
