@@ -1,8 +1,13 @@
-import React from 'react'
+import { FC, ReactNode } from "react";
+
 import { Typography } from "@mui/material";
 
-function TextError (props) {
-  return <Typography color="error" variant={'h6'} className='error'>{props.children}</Typography>
+interface Props {
+ 
+  children: ReactNode;
+}
+const TextError: FC<Props> =({children})=> {
+  return <Typography color="error" variant={'h6'} className='error'>{children}</Typography>
 }
 
 export default TextError

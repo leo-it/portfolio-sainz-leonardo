@@ -19,6 +19,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "redux/hooks"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "redux/hooks", "components/ui/Carousel.jsx", "components/ui/Carousel.jsx"],
   "exclude": ["node_modules"]
 }

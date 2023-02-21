@@ -39,7 +39,7 @@ export const Carousel = ({ children }) => {
               }
               disabled={
                 currentSlide ===
-                instanceRef?.current?.track?.details?.slides?.length - 1
+                instanceRef.current.track.details.slides.length - 1
               }
             />
           </>
