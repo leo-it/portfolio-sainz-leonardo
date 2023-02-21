@@ -1,15 +1,20 @@
 import { Box, Typography } from "@mui/material";
+import React, { FC } from "react";
 
 import Image from "next/image";
-import React from "react";
 
-export const CardUsersSay = ({
+interface Props {
+  profilePicture: string;
+  name: string;
+  stars: number;
+  description: string;
+}
+export const CardUsersSay: FC<Props> = ({
   profilePicture,
-  fullname,
+  name,
   stars,
   description,
 }) => {
-  
   return (
     <Box
       sx={{
@@ -49,10 +54,7 @@ export const CardUsersSay = ({
           </Box>
 
           <Box color="black" justifyContent={"center"} sx={{ mt: "auto" }}>
-            <h5 >
-              {fullname}
-            </h5>
-           
+            <h5>{name}</h5>
           </Box>
         </Box>
         <Box
@@ -64,12 +66,10 @@ export const CardUsersSay = ({
           <Typography sx={{ color: "orange" }} variant="h3" color="black">
             {"★".repeat(++stars).padEnd(5, "☆")}
           </Typography>
-        
         </Box>
-<Box color="#141c3a">
-
-        <h6  >{description}</h6>
-</Box>
+        <Box color="#141c3a">
+          <h6>{description}</h6>
+        </Box>
       </Box>
     </Box>
   );

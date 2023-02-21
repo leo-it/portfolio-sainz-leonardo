@@ -3,22 +3,23 @@ import { Box, Typography } from "@mui/material";
 import { FormOpinions, Opinions } from "@/components/ui";
 import { collection, getDocs, getFirestore } from "firebase/firestore";
 
+import { FC } from "react";
 import { GetServerSideProps } from "next";
 import { PortfolioLayout } from "@/components/layout";
 import { Projects } from "@/components/sections/projects";
 import firebaseApp from "@/firebase";
 
 const db = getFirestore(firebaseApp);
-
-export default function Home({ opinions }) {
+interface Props {
+  opinions: any;
+}
+export const Home: FC<Props> = ({ opinions }) => {
   return (
     <>
       <PortfolioLayout
         title={"Portfolio"}
         pageDescription={"Portafolio descripcion"}
       >
-      
-
         <Box
           style={{
             margin: "80px auto",
@@ -68,7 +69,7 @@ export default function Home({ opinions }) {
       </PortfolioLayout>
     </>
   );
-}
+};
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const querySnapshot = await getDocs(collection(db, "opinion"));
@@ -83,3 +84,5 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     },
   };
 };
+
+export default Home;

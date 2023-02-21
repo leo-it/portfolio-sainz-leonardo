@@ -29,7 +29,7 @@ export const FormOpinions = () => {
     stars: null,
   };
 
-  const handleActiveStars = (i) => {
+  const handleActiveStars = (i:any) => {
     let auxStars = [false, false, false, false, false];
 
     activeStars.forEach((star, idx) => {
@@ -39,7 +39,7 @@ export const FormOpinions = () => {
     setActiveStars(auxStars);
   };
 
-  const onSubmit = async (values, submitProps) => {
+  const onSubmit = async (values:any, submitProps:any) => {
     /*     console.log("Form data", values);
      */ // console.log("submitProps", submitProps);
     try {

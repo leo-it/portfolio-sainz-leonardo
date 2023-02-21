@@ -1,13 +1,13 @@
+import React, { FC } from "react";
+
 import { Box } from "@mui/material";
 import { CardUsersSay } from "./CardUsersSay";
 import { Carousel } from "./Carousel";
-import React from "react";
-import imageOne from "../../public/img/userSay.png"
 
-/* import imageOne from "../../public/img/users/user2.webp"
- */
-export const Opinions = ({ opinions }) => {
-  
+interface Props {
+  opinions: any;
+}
+export const Opinions: FC<Props> = ({ opinions }) => {
   return (
     <Box
       sx={{
@@ -17,21 +17,30 @@ export const Opinions = ({ opinions }) => {
     >
       {opinions ? (
         <Carousel>
-          {opinions?.map((opinion, key) => (
-            <Box key={key} sx={{ display: "flex" }} className="keen-slider__slide ">
-              <CardUsersSay
-                profilePicture={imageOne}
-                fullname={opinion.name}
-                /*  country={"UK"} */
-                stars={opinion.stars}
-                description={opinion.description}
-              />
-            </Box>
-          ))}
+          {opinions?.map(
+            (
+              opinion: { name: string; stars: number; description: string },
+              key: React.Key | null | undefined
+            ) => (
+              <Box
+                key={key}
+                sx={{ display: "flex" }}
+                className="keen-slider__slide "
+              >
+                <CardUsersSay
+                  profilePicture={"/img/userSay.png"}
+                  name={opinion.name}
+                  /*  country={"UK"} */
+                  stars={opinion.stars}
+                  description={opinion.description}
+                />
+              </Box>
+            )
+          )}
 
           {/*  <Box sx={{ display: "flex" }} className="keen-slider__slide ">
           <CardUsersSay
-            fullname={"Norma"}
+            name={"Norma"}
             stars={4}
             description="I downloaded this app and was like “is it really going to help me fall asleep faster?” And it did. I was asleep within 5 minutes!"
           />
@@ -42,8 +51,8 @@ export const Opinions = ({ opinions }) => {
           <>
             <Box sx={{ display: "flex" }} className="keen-slider__slide ">
               <CardUsersSay
-                profilePicture={imageOne}
-                fullname={"Cargando..."}
+                profilePicture={"/img/userSay.png"}
+                name={"Cargando..."}
                 /*  country={"UK"} */
                 stars={4}
                 description="Cargando..."
@@ -51,8 +60,8 @@ export const Opinions = ({ opinions }) => {
             </Box>{" "}
             <Box sx={{ display: "flex" }} className="keen-slider__slide ">
               <CardUsersSay
-                profilePicture={imageOne}
-                fullname={"Cargando..."}
+                profilePicture={"/img/userSay.png"}
+                name={"Cargando..."}
                 /*  country={"UK"} */
                 stars={4}
                 description="Cargando..."
