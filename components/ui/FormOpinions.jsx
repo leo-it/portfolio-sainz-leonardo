@@ -8,13 +8,11 @@ import Button from "@mui/material/Button";
 import React from "react";
 import TextError from "./TextError";
 import TextField from "@mui/material/TextField";
-import { Typography } from "@mui/material";
 import firebase from "../../firebase";
 import { useState } from "react";
 
 export const FormOpinions = () => {
   const db = getFirestore(firebase);
-  const [formValues, setFormValues] = useState(null);
   const [activeStars, setActiveStars] = useState([
     false,
     false,
@@ -29,7 +27,7 @@ export const FormOpinions = () => {
     stars: null,
   };
 
-  const handleActiveStars = (i:any) => {
+  const handleActiveStars = (i) => {
     let auxStars = [false, false, false, false, false];
 
     activeStars.forEach((star, idx) => {
@@ -39,7 +37,7 @@ export const FormOpinions = () => {
     setActiveStars(auxStars);
   };
 
-  const onSubmit = async (values:any, submitProps:any) => {
+  const onSubmit = async (values, submitProps) => {
     /*     console.log("Form data", values);
      */ // console.log("submitProps", submitProps);
     try {

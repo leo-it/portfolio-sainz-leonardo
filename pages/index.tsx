@@ -1,10 +1,11 @@
 import { AboutMe, SayHello, Tecnologies } from "@/components/sections";
 import { Box, Typography } from "@mui/material";
-import { FormOpinions, Opinions } from "@/components/ui";
 import { collection, getDocs, getFirestore } from "firebase/firestore";
 
 import { FC } from "react";
+import { FormOpinions } from "@/components/ui";
 import { GetServerSideProps } from "next";
+import { Opinions } from "@/components/ui";
 import { PortfolioLayout } from "@/components/layout";
 import { Projects } from "@/components/sections/projects";
 import firebaseApp from "@/firebase";
