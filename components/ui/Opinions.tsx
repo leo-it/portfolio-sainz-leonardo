@@ -17,8 +17,8 @@ export const Opinions = ({ opinions }) => {
     >
       {opinions ? (
         <Carousel>
-          {opinions?.map((opinion) => (
-            <Box sx={{ display: "flex" }} className="keen-slider__slide ">
+          {opinions?.map((opinion, key) => (
+            <Box key={key} sx={{ display: "flex" }} className="keen-slider__slide ">
               <CardUsersSay
                 profilePicture={imageOne}
                 fullname={opinion.name}

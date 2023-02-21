@@ -64,14 +64,14 @@ export const FormOpinions = () => {
       .required("Campo requerido"),
     stars: Yup.number().required("Campo requerido"),
   });
-
+/* 
   const validateComments = (value) => {
     let error;
     if (!value) {
       error = "Required";
     }
     return error;
-  };
+  }; */
 
   const MyTextField = ({ field, form, ...props }) => {
     return <TextField {...field} {...props} />;
@@ -97,7 +97,7 @@ export const FormOpinions = () => {
               <Box maxWidth={"500px"}>
                 <div role="group" aria-labelledby="my-radio-group">
                   {activeStars.map((star, idx) => (
-                    <label
+                    <label key={idx}
                       className={`label--star ${
                         activeStars[idx] && "activeStar"
                       }`}
