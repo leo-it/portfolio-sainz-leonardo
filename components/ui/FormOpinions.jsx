@@ -3,6 +3,7 @@ import * as Yup from "yup";
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import { addDoc, collection, getFirestore } from "firebase/firestore";
 
+import Alert from "@mui/material/Alert";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import React from "react";
@@ -20,7 +21,7 @@ export const FormOpinions = () => {
     false,
     false,
   ]);
-
+  const [isSubmited, setIsSubmited] = useState(false);
   const initialValues = {
     name: "",
     description: "",
@@ -43,12 +44,21 @@ export const FormOpinions = () => {
     try {
       await addDoc(collection(db, "opinion"), {
         ...values,
+      }).then((res) => {
+        if (res) {
+          setIsSubmited(true);
+          setTimeout(() => {
+            setIsSubmited(false);
+          }, 4000);
+        }
       });
     } catch (error) {
       console.log(error);
     }
+
     submitProps.setSubmitting(false);
     submitProps.resetForm();
+    setActiveStars([false, false, false, false, false])
   };
 
   const validationSchema = Yup.object({
@@ -62,14 +72,6 @@ export const FormOpinions = () => {
       .required("Campo requerido"),
     stars: Yup.number().required("Campo requerido"),
   });
-/* 
-  const validateComments = (value) => {
-    let error;
-    if (!value) {
-      error = "Required";
-    }
-    return error;
-  }; */
 
   const MyTextField = ({ field, form, ...props }) => {
     return <TextField {...field} {...props} />;
@@ -79,10 +81,15 @@ export const FormOpinions = () => {
     <Box
       sx={{
         mx: "auto",
-        mt:{xs:"40px",md:"0px"},
+        mt: { xs: "40px", md: "0px" },
         width: { xs: "100%", md: "50%" },
       }}
     >
+      {isSubmited && (
+        <Alert id="alert-submited" severity="success">
+          Publicado correctamente!
+        </Alert>
+      )}
       <Formik
         initialValues={/* formValues || */ initialValues}
         validationSchema={validationSchema}
@@ -95,7 +102,8 @@ export const FormOpinions = () => {
               <Box maxWidth={"500px"}>
                 <div role="group" aria-labelledby="my-radio-group">
                   {activeStars.map((star, idx) => (
-                    <label key={idx}
+                    <label
+                      key={idx}
                       className={`label--star ${
                         activeStars[idx] && "activeStar"
                       }`}
