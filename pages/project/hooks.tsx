@@ -116,32 +116,8 @@ const UseCallback = useCallback(() => values.sort(), [values]);
           Sin embargo, useRef()es útil para algo más que el refatributo. Es útil para mantener cualquier valor mutable similar a cómo usaría los campos de instancia en las clases.
           </Typography>
         </AccordionDetails>
-        
       </Accordion>
-      <Accordion
-        sx={{
-        }}
-      >
-        <AccordionSummary
-          expandIcon={<ExpandMoreIcon />}
-          aria-controls="panel1a-content"
-          id="panel1a-header"
-        >
-          <Typography>UseRef</Typography>
-        </AccordionSummary>
-        <AccordionDetails>
-          <Typography>
-          useRefdevuelve un objeto ref mutable cuya .currentpropiedad se inicializa en el argumento pasado ( initialValue). El objeto devuelto persistirá durante toda la vida útil del componente.
-          </Typography>
-          <TextInputWithFocusButton /> 
-          <Typography>
-          Esencialmente, useRefes como una "caja" que puede contener un valor mutable en su .currentpropiedad.
-          Es posible que esté familiarizado con las referencias principalmente como una forma de acceder al DOM . Si pasa un objeto ref a React with  div ref=myRef , React establecerá su .currentpropiedad en el nodo DOM correspondiente siempre que ese nodo cambie.
-          Sin embargo, useRef()es útil para algo más que el refatributo. Es útil para mantener cualquier valor mutable similar a cómo usaría los campos de instancia en las clases.
-          </Typography>
-        </AccordionDetails>
-        
-      </Accordion>
+     
     </PortfolioLayout>
   );
 };
