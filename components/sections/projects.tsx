@@ -86,6 +86,16 @@ export const Projects = () => {
               img={"/img/projects/money.png"}
             />
           </Grid>
+         {/*  <Grid item xs={12} sm={4}>
+          <CardProjectMui
+              alt="redux-toolkit"
+              target="_self"
+              link="/project/hooks"
+              title="Redux Toolkit"
+              text="Practica con hooks"
+              img={"/img/projects/hooks.png"}
+            />
+          </Grid> */}
         </Grid>
       </Box>
     </>
