@@ -46,9 +46,7 @@ export default function Navbar(props: Props) {
   const t = locale === "es" ? es : en;
   console.log(router.pathname, router.asPath, locale);
 
-  const changeLanguage = (e) => {
-    console.log(e.target.value);
-
+  const changeLanguage = (e: any) => {
     const locale2 = e.target.value;
     router.push(router.pathname, router.asPath, { locale: locale2 });
   };
@@ -66,12 +64,24 @@ export default function Navbar(props: Props) {
             <Link href="#footer">
               <Box display="flex">
                 <Typography align="center" justifyContent={"center"} my="auto">
-                  Contacto
+                  {t.contact}
                 </Typography>
               </Box>
             </Link>
           </ListItemButton>
         </ListItem>
+        <ListItemButton sx={{ textAlign: "center" }}>
+          <Button onClick={(e) => changeLanguage(e)} value="es">
+            {" "}
+            Español
+          </Button>{" "}
+        </ListItemButton>
+        <ListItemButton sx={{ textAlign: "center" }}>
+          <Button onClick={(e) => changeLanguage(e)} value="en">
+            {" "}
+            English
+          </Button>
+        </ListItemButton>
       </List>
     </Box>
   );
@@ -116,7 +126,7 @@ export default function Navbar(props: Props) {
                     my="auto"
                     color="white"
                   >
-                    Contacto
+                    {t.contact}
                   </Typography>
                 </Box>
               </Link>
@@ -132,7 +142,7 @@ export default function Navbar(props: Props) {
               <option value={"en"}>en</option>
               <option value={"es"}>es</option>
             </NativeSelect>
-           {/*  <select
+            {/*  <select
               onChange={changeLanguage}
               defaultValue={"es"}
               className="text-white text-shadow-sm text-lg bg-transparent tracking-wide"
