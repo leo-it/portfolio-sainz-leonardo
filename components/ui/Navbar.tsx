@@ -139,21 +139,10 @@ export default function Navbar(props: Props) {
                 id: "language",
               }}
             >
-              <option value={"en"}>en</option>
               <option value={"es"}>es</option>
+              <option value={"en"}>en</option>
             </NativeSelect>
-            {/*  <select
-              onChange={changeLanguage}
-              defaultValue={"es"}
-              className="text-white text-shadow-sm text-lg bg-transparent tracking-wide"
-            >
-              <option className="text-black" value="es">
-                ES
-              </option>
-              <option className="text-black" value="en">
-                EN
-              </option>
-            </select> */}
+   
           </Box>
         </Toolbar>
       </AppBar>

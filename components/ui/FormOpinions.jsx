@@ -131,7 +131,7 @@ export const FormOpinions = () => {
                   id="name"
                   name="name"
                   type="text"
-                  label="Nombre"
+                  label={t.Opinions.name}
                 />
                 <ErrorMessage name="name" component={TextError} />
                 <Box marginTop={"15px"}></Box>
@@ -142,7 +142,7 @@ export const FormOpinions = () => {
                   id="description"
                   name="description"
                   type="text"
-                  label="Descripcion"
+                  label={t.Opinions.description}
                 />
                 <ErrorMessage name="description" component={TextError} />
               </Box>

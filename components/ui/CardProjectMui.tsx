@@ -8,6 +8,8 @@ import CardHeader from "@mui/material/CardHeader";
 import CardMedia from "@mui/material/CardMedia";
 import ModalMui from "./ModalMui";
 import Typography from "@mui/material/Typography";
+import en from "@/locales/en";
+import es from "@/locales/es";
 import { styled } from "@mui/material/styles";
 import { useRouter } from "next/router";
 
@@ -43,7 +45,9 @@ const CardProjectMui: FC<Props> = ({
   target,
   alt,
 }) => {
-  const router = useRouter()
+  const router = useRouter();
+  const { locale } = router;
+  const t = locale === "es" ? es : en;
   const [expanded, setExpanded] = useState(false);
 
   const handleExpandClick = () => {
@@ -60,16 +64,19 @@ const CardProjectMui: FC<Props> = ({
       <CardMedia component="img" height="284" image={img} alt={alt} />
 
       <CardContent sx={{ marginTop: 2 }}>
-        <Typography sx={{minHeight: 95}} pb="15px" variant="body2" color="text.secondary">
+        <Typography
+          sx={{ minHeight: 95 }}
+          pb="15px"
+          variant="body2"
+          color="text.secondary"
+        >
           {text}
         </Typography>
         {modalUrl ? (
           <ModalMui modalUrl={modalUrl} />
         ) : (
           <>
-            <Button onClick={()=> router.push(`${link}`)}>
-                Ver web
-            </Button>
+            <Button onClick={() => router.push(`${link}`)}> {t.projects.see}  web</Button>
           </>
         )}
       </CardContent>

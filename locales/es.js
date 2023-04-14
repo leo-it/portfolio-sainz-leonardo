@@ -32,7 +32,8 @@ export default {
     title: "Mis proyectos    ",
     subtitle: "Aqui algunos de los proyectos en los que estuve trabajando.    ",
     see: "Ver",
-    seeMore: "Ver más",
+    less:"menos",
+    more: " más",
   },
   Opinions: {
     title: "¿Que te parecio mi web?    ",

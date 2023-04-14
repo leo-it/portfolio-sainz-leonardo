@@ -1,10 +1,16 @@
 import { Box, Button, Grid, Typography } from "@mui/material";
 
 import CardProjectMui from "../ui/CardProjectMui";
+import en from "@/locales/en";
+import es from "@/locales/es";
+import { useRouter } from "next/router";
 import { useState } from "react";
 
 export const Projects = () => {
   const [visible, setVisible] = useState(false);
+  const router = useRouter();
+  const { locale } = router;
+  const t = locale === "es" ? es : en;
   return (
     <>
       <Box
@@ -17,10 +23,10 @@ export const Projects = () => {
         }}
       >
         <Typography variant="h2" fontWeight={"bold"}>
-          Mis proyectos
+          {t.projects.title}
         </Typography>
         <Typography variant="h3" marginTop={10} marginBottom={5}>
-          Aqui algunos de los proyectos en los que estuve trabajando.
+          {t.projects.subtitle}
         </Typography>
         <Grid
           container
@@ -121,7 +127,8 @@ export const Projects = () => {
           }}
           onClick={() => setVisible(!visible)}
         >
-          Ver {visible ? "menos" : "mas"}
+          {t.projects.see}
+          {visible ? t.projects.less : t.projects.more}
         </Button>
       </Box>
     </>

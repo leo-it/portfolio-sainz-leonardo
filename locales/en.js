@@ -1,38 +1,39 @@
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
   title: "Frontend Developer",
-  subtitle: "Desarrollador Reactjs/Nextjs",
+  subtitle: "Reactjs/Nextjs Developer",
   aboutMe: {
-    title: "Hola, soy Leo. Encantado de conocerte.",
+    title: "Hi, I'm Leo. Pleased to meet you.",
     description:
-      "Desde que comence a aprender JavaScript hace mas de 4 años, tuve la oportunidad de trabajar para una software factory increible en la que use las mejores tecnologias para el frontend. Actualmente trabajo para Accenture en conjunto con el banco Galicia como desarrollador fullstack con Nextjs y Nestjs. En ambas empresas trabaje con personas talentosas y confiables. ",
+      "Since I started learning JavaScript more than 4 years ago, I had the opportunity to work for an amazing software factory that uses the best technologies for the frontend. I currently work for Accenture in conjunction with Banco Galicia as a fullstack developer with Nextjs and Nestjs. In both companies I worked with talented and reliable people. ",
     description2:
-      "Estoy contento con lo que hago y trabajo constantemente para mejorar mis habilidades.",
+      "I am happy with what I do and I am constantly working to improve my skills.",
   },
   tecnologies: {
     front: {
       title: "Frontend Developer",
       description:
-        "Me gusta codificar cosas desde cero y disfruto dando vida a las ideas en el navegador.",
-      subtitle: "Tecnologias & Lenguages",
+        "I like to code things from scratch and enjoy bringing ideas to life in the browser.",
+      subtitle: "Technologies & Languages",
     },
     back: {
       title: "Backend Developer",
       description:
-        "Valoro el codigo limpio y organizado, aun tengo mucho por aprender en back.",
-      subtitle: "Tecnologias & Lenguages",
+        "I value clean and organized code, I still have a lot to learn in backend.",
+      subtitle: "Technologies & Languages",
     },
     other: {
       title: "Otros",
-      description: "Mi marco de trabajo favorito por lejos es Scrum.",
-      subtitle: "Tecnologias & Lenguages",
+      description: "My favorite framework by far is Scrum..",
+      subtitle: "Technologies & Languages",
     },
   },
   projects: {
     title: "My projects    ",
-    subtitle: "Aqui algunos de los proyectos en los que estuve trabajando.    ",
-    see: "Ver",
-    seeMore: "Ver más",
+    subtitle: "Here are some of the projects I've been working on.    ",
+    see: "See",
+    more: " more",
+    less: " less",
   },
   Opinions: {
     title: " What do you think of my website?    ",
