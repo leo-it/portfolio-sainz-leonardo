@@ -16,7 +16,7 @@ import { TextInputWithFocusButton } from "@/hooks/UseRef";
 const values = [3, 9, 6, 4, 2, 1];
 
 const HooksPractica = () => {
-  const UseCallback = useCallback(() => values.sort(), [values]);
+  const UseCallback = useCallback(() => values.sort(), []);
 
   return (
     <PortfolioLayout
