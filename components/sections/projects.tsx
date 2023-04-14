@@ -1,8 +1,10 @@
-import { Box, Grid, Typography } from "@mui/material";
+import { Box, Button, Grid, Typography } from "@mui/material";
 
 import CardProjectMui from "../ui/CardProjectMui";
+import { useState } from "react";
 
 export const Projects = () => {
+  const [visible, setVisible] = useState(false);
   return (
     <>
       <Box
@@ -86,17 +88,41 @@ export const Projects = () => {
               img={"/img/projects/money.png"}
             />
           </Grid>
-         {/*  <Grid item xs={12} sm={4}>
-          <CardProjectMui
-              alt="redux-toolkit"
-              target="_self"
-              link="/project/hooks"
-              title="Redux Toolkit"
-              text="Practica con hooks"
-              img={"/img/projects/hooks.png"}
-            />
-          </Grid> */}
+          {visible ? (
+            <>
+              <Grid item xs={12} sm={4}>
+                <CardProjectMui
+                  alt="hooks"
+                  target="_self"
+                  link="/project/hooks"
+                  title="Redux Toolkit"
+                  text="Practica con hooks"
+                  img={"/img/projects/hooks.png"}
+                />
+              </Grid>
+              <Grid item xs={12} sm={4}>
+                <CardProjectMui
+                  alt="patrones"
+                  target="_self"
+                  link="/project/patrones"
+                  title="Redux Toolkit"
+                  text="Practica con patrones de diseño"
+                  img={"/img/projects/patrones.png"}
+                />
+              </Grid>
+            </>
+          ) : (
+            <></>
+          )}
         </Grid>
+        <Button
+          sx={{
+            mt: { xs: 2, md: 5 },
+          }}
+          onClick={() => setVisible(!visible)}
+        >
+          Ver {visible ? "menos" : "mas"}
+        </Button>
       </Box>
     </>
   );
