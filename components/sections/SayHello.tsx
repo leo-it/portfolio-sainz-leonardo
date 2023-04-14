@@ -2,8 +2,15 @@ import { Box, Typography } from "@mui/material";
 
 import Image from "next/image";
 import React from "react";
+import en from "@/locales/en";
+import es from "@/locales/es";
+import { useRouter } from "next/router";
 
 export const SayHello = () => {
+  const router = useRouter();
+  const { locale } = router;
+  const t = locale === "es" ? es : en;
+
   return (
     <>
       <Box
@@ -11,7 +18,7 @@ export const SayHello = () => {
         alignItems="center"
         textAlign={"center"}
         sx={{
-          height: {xs:"50vh", sm:"80vh"},
+          height: { xs: "50vh", sm: "80vh" },
         }}
       >
         <Box sx={{ width: { xs: "100%" }, mt: { xs: 7 } }}>
@@ -28,22 +35,22 @@ export const SayHello = () => {
               },
             }}
           >
-            Frontend Developer
+            {t.title}
           </Typography>
           <Typography
-           sx={{
-            fontSize: {
-              lg: 70,
+            sx={{
+              fontSize: {
+                lg: 70,
                 md: 45,
                 sm: 45,
-              xs: 22,
-            },
-          }}
+                xs: 22,
+              },
+            }}
             variant="h3"
             color=" rgba(10, 10, 10, 0.9);
             }"
           >
-            Desarrollador Reactjs/Nextjs
+            {t.subtitle}
           </Typography>
         </Box>
         <Box

@@ -2,8 +2,15 @@ import { Box, Grid, Typography } from "@mui/material";
 
 import Image from "next/image";
 import React from "react";
+import en from "@/locales/en";
+import es from "@/locales/es";
+import { useRouter } from "next/router";
 
 export const Tecnologies = () => {
+  const router = useRouter();
+  const { locale } = router;
+  const t = locale === "es" ? es : en;
+
   return (
     <>
       <Box
@@ -58,11 +65,13 @@ export const Tecnologies = () => {
                 font: "bold",
               }}
             >
-              Frontend Developer
+              {t.tecnologies.front.title}
             </Typography>
-            <Typography variant="body2" sx={{ mt: 4 , height:"60px", paddingX:"15px" }}>
-              Me gusta codificar cosas desde cero y disfruto dando vida a las
-              ideas en el navegador.
+            <Typography
+              variant="body2"
+              sx={{ mt: 4, height: "60px", paddingX: "15px" }}
+            >
+              {t.tecnologies.front.description}
             </Typography>
             <Typography
               variant="body2"
@@ -71,7 +80,7 @@ export const Tecnologies = () => {
                 color: "#6e07f3",
               }}
             >
-              Tecnologias & Lenguages
+              {t.tecnologies.front.subtitle}
             </Typography>
             <Typography sx={{ mt: 4, px: "5px" }} variant="body2">
               JS, ReactJS, NextJS, HTML, CSS.
@@ -126,11 +135,13 @@ export const Tecnologies = () => {
                 font: "bold",
               }}
             >
-              Backend Developer
+              {t.tecnologies.back.title}
             </Typography>
-            <Typography variant="body2" sx={{ mt: 4, height:"60px", paddingX:"15px" }}>
-              Valoro el codigo limpio y organizado, aun tengo mucho por aprender
-              en back.
+            <Typography
+              variant="body2"
+              sx={{ mt: 4, height: "60px", paddingX: "15px" }}
+            >
+              {t.tecnologies.back.description}
             </Typography>
             <Typography
               variant="body2"
@@ -139,7 +150,7 @@ export const Tecnologies = () => {
                 color: "#6e07f3",
               }}
             >
-              Tecnologias & Lenguages
+              {t.tecnologies.back.subtitle}
             </Typography>
             <Typography sx={{ mt: 4, px: "5px" }} variant="body2">
               JS, NestJS, NodeJS, TypeScript.
@@ -195,10 +206,13 @@ export const Tecnologies = () => {
                 font: "bold",
               }}
             >
-              Otros
+              {t.tecnologies.other.title}
             </Typography>
-            <Typography variant="body2" sx={{ mt: 4 , height:"60px", paddingX:"15px"}}>
-              Mi marco de trabajo favorito por lejos es Scrum.
+            <Typography
+              variant="body2"
+              sx={{ mt: 4, height: "60px", paddingX: "15px" }}
+            >
+              {t.tecnologies.other.description}
             </Typography>
             <Typography
               variant="body2"
@@ -207,7 +221,7 @@ export const Tecnologies = () => {
                 color: "#6e07f3",
               }}
             >
-              Tecnologias & Lenguages
+              {t.tecnologies.other.subtitle}
             </Typography>
             <Typography sx={{ mt: 4, px: "5px" }} variant="body2">
               Git, Scrum, Kanban.

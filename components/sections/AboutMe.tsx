@@ -2,8 +2,14 @@ import { Box, Typography } from "@mui/material";
 
 import Image from "next/image";
 import React from "react";
+import en from "@/locales/en";
+import es from "@/locales/es";
+import { useRouter } from "next/router";
 
 export const AboutMe = () => {
+  const router = useRouter();
+  const { locale } = router;
+  const t = locale === "es" ? es : en;
   return (
     <>
       <Box justifyContent="center" alignItems="center" textAlign={"center"}>
@@ -48,7 +54,7 @@ export const AboutMe = () => {
             }}
           >
             <Typography variant="h3" color="white" fontWeight={"bold"}>
-              Hola, soy Leo. Encantado de conocerte.
+              {t.aboutMe.title}
             </Typography>
 
             <Typography
@@ -59,14 +65,7 @@ export const AboutMe = () => {
               variant="h6"
               color="white"
             >
-              Desde que comence a aprender JavaScript hace mas de 4 años, tuve
-              la oportunidad de trabajar para una software factory increible en
-              la que use las mejores tecnologias para el frontend. Actualmente
-              trabajo para Accenture en conjunto con el banco Galicia como
-              desarrollador fullstack con Nextjs y Nestjs. En ambas empresas
-              trabaje con personas talentosas y confiables.
-              <br/> Estoy contento con lo que hago y trabajo constantemente para mejorar mis habilidades.
-            </Typography>
+            {t.aboutMe.description}<br/>{t.aboutMe.description2} </Typography>
           </Box>
         </Box>
       </Box>

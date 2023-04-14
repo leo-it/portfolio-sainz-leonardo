@@ -8,13 +8,19 @@ import { GetServerSideProps } from "next";
 import { Opinions } from "@/components/ui";
 import { PortfolioLayout } from "@/components/layout";
 import { Projects } from "@/components/sections/projects";
+import en from "@/locales/en";
+import es from "@/locales/es";
 import firebaseApp from "@/firebase";
+import { useRouter } from "next/router";
 
 const db = getFirestore(firebaseApp);
 interface Props {
   opinions: any;
 }
 export const Home: FC<Props> = ({ opinions }) => {
+  const router = useRouter();
+  const { locale } = router;
+  const t = locale === "es" ? es : en;
   return (
     <>
       <PortfolioLayout
@@ -59,7 +65,7 @@ export const Home: FC<Props> = ({ opinions }) => {
             variant="h2"
             fontWeight={"bold"}
           >
-            ¿Que te parecio mi web?
+            {t.Opinions.title}
           </Typography>
           <Box sx={{ display: { xs: "block", md: "flex" } }}>
             <Opinions opinions={opinions} />
