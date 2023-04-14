@@ -9,7 +9,10 @@ import Button from "@mui/material/Button";
 import React from "react";
 import TextError from "./TextError";
 import TextField from "@mui/material/TextField";
+import en from "@/locales/en";
+import es from "@/locales/es";
 import firebase from "../../firebase";
+import { useRouter } from "next/router";
 import { useState } from "react";
 
 export const FormOpinions = () => {
@@ -58,7 +61,7 @@ export const FormOpinions = () => {
 
     submitProps.setSubmitting(false);
     submitProps.resetForm();
-    setActiveStars([false, false, false, false, false])
+    setActiveStars([false, false, false, false, false]);
   };
 
   const validationSchema = Yup.object({
@@ -76,7 +79,9 @@ export const FormOpinions = () => {
   const MyTextField = ({ field, form, ...props }) => {
     return <TextField {...field} {...props} />;
   };
-
+  const router = useRouter();
+  const { locale } = router;
+  const t = locale === "es" ? es : en;
   return (
     <Box
       sx={{
@@ -151,7 +156,7 @@ export const FormOpinions = () => {
                 color="error"
                 type="reset"
               >
-                Reiniciar
+                {t.Opinions.reset}
               </Button>
               <Button
                 sx={{ mt: 2 }}
@@ -160,7 +165,7 @@ export const FormOpinions = () => {
                 type="submit"
                 disabled={!formik.isValid || formik.isSubmitting}
               >
-                Publicar
+                {t.Opinions.public}
               </Button>
             </Form>
           );

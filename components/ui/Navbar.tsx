@@ -1,5 +1,7 @@
 import * as React from "react";
 
+import { NativeSelect, Tooltip } from "@mui/material";
+
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
@@ -15,8 +17,10 @@ import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
 import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
-import { Tooltip } from "@mui/material";
 import Typography from "@mui/material/Typography";
+import en from "@/locales/en";
+import es from "@/locales/es";
+import { useRouter } from "next/router";
 
 interface Props {
   /**
@@ -36,6 +40,18 @@ export default function Navbar(props: Props) {
     setMobileOpen((prevState) => !prevState);
   };
 
+  /* i18n */
+  const router = useRouter();
+  const { locale } = router;
+  const t = locale === "es" ? es : en;
+  console.log(router.pathname, router.asPath, locale);
+
+  const changeLanguage = (e) => {
+    console.log(e.target.value);
+
+    const locale2 = e.target.value;
+    router.push(router.pathname, router.asPath, { locale: locale2 });
+  };
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
       <Link href={"/"}>
@@ -105,6 +121,29 @@ export default function Navbar(props: Props) {
                 </Box>
               </Link>
             </Button>
+            <NativeSelect
+              onChange={changeLanguage}
+              defaultValue={"en"}
+              inputProps={{
+                name: "en",
+                id: "language",
+              }}
+            >
+              <option value={"en"}>en</option>
+              <option value={"es"}>es</option>
+            </NativeSelect>
+           {/*  <select
+              onChange={changeLanguage}
+              defaultValue={"es"}
+              className="text-white text-shadow-sm text-lg bg-transparent tracking-wide"
+            >
+              <option className="text-black" value="es">
+                ES
+              </option>
+              <option className="text-black" value="en">
+                EN
+              </option>
+            </select> */}
           </Box>
         </Toolbar>
       </AppBar>
