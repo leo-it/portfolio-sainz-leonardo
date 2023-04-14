@@ -95,7 +95,7 @@ export const Projects = () => {
                   alt="hooks"
                   target="_self"
                   link="/project/hooks"
-                  title="Redux Toolkit"
+                  title="Hooks"
                   text="Practica con hooks"
                   img={"/img/projects/hooks.png"}
                 />
@@ -105,7 +105,7 @@ export const Projects = () => {
                   alt="patrones"
                   target="_self"
                   link="/project/patrones"
-                  title="Redux Toolkit"
+                  title="Patrones de diseño"
                   text="Practica con patrones de diseño"
                   img={"/img/projects/patrones.png"}
                 />
