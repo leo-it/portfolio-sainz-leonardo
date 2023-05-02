@@ -45,7 +45,16 @@ export const Projects = () => {
               img={"/img/projects/sleepy.png"}
             />
           </Grid>
-
+          <Grid item xs={12} sm={4}>
+            <CardProjectMui
+              alt="codi.link"
+              target="_blank"
+              link="https://codi-link-leo-midudev.vercel.app/"
+              title="Codi.link"
+              text="Este es un editor de codigo html, css y js. Se uso JavaScript y Monaco para integrar el editor de VSC. Practica hecha siguiendo el tutorial de midudev"
+              img={"/img/projects/codi.link.png"}
+            />
+          </Grid>
           <Grid item xs={12} sm={4}>
             <CardProjectMui
               alt="clon-mercado-libre"
@@ -74,7 +83,7 @@ export const Projects = () => {
               img={"/img/projects/react-query.png"}
             />
           </Grid>
-          <Grid item xs={12} sm={4}>
+          {/*  <Grid item xs={12} sm={4}>
             <CardProjectMui
               alt="redux-toolkit"
               target="_self"
@@ -83,7 +92,7 @@ export const Projects = () => {
               text="Practica con Redux Toolkit"
               img={"/img/projects/infleta.png"}
             />
-          </Grid>
+          </Grid> */}
 
           <Grid item xs={12} sm={4}>
             <CardProjectMui
@@ -96,6 +105,16 @@ export const Projects = () => {
           </Grid>
           {visible ? (
             <>
+              <Grid item xs={12} sm={4}>
+                <CardProjectMui
+                  alt="redux-toolkit"
+                  target="_self"
+                  link="/project/redux-toolkit"
+                  title="Redux Toolkit"
+                  text="Practica con Redux Toolkit"
+                  img={"/img/projects/infleta.png"}
+                />
+              </Grid>
               <Grid item xs={12} sm={4}>
                 <CardProjectMui
                   alt="hooks"

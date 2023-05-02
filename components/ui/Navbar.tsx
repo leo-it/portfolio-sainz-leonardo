@@ -139,8 +139,8 @@ export default function Navbar(props: Props) {
                 id: "language",
               }}
             >
-              <option value={"es"}>es</option>
-              <option value={"en"}>en</option>
+              <option value={"es"}>ES</option>
+              <option value={"en"}>EN</option>
             </NativeSelect>
    
           </Box>
