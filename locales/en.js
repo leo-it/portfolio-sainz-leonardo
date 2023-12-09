@@ -1,7 +1,7 @@
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
-  title: "Frontend Developer",
-  subtitle: "Reactjs/Nextjs Developer",
+  title: "Full Stack Developer",
+  subtitle: "Reactjs/Nextjs & Nodejs/Nestjs ",
   aboutMe: {
     title: "Hi, I'm Leo. Pleased to meet you.",
     description:
