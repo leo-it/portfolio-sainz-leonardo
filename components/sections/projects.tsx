@@ -35,6 +35,38 @@ export const Projects = () => {
           alignItems="center"
           display={"flex"}
         >
+          {/*  */}
+          <Grid item xs={12} sm={4}>
+            <CardProjectMui
+              alt="rick-and-morty"
+              target="_blank"
+              link="https://rick-and-morty-tan-nu.vercel.app/"
+              title="Rick-and-morty"
+              text="Para este proyecto aplique las ultimas tecnologias de nextjs 13 con typescript, tailwind css, animista para los efectos y algo de testing.   "
+              img={"/img/projects/rickandmorty.png"}
+            />
+          </Grid>
+          <Grid item xs={12} sm={4}>
+            <CardProjectMui
+              alt="animaciones"
+              target="_blank"
+              link="https://portfolio-animado-framer-motion-p9autvxri-leo-it.vercel.app/"
+              title="Animaciones"
+              text="Practica con framer motion de animaciones"
+              img={"/img/projects/motion-animacion.jpg"}
+            />
+          </Grid>
+          <Grid item xs={12} sm={4}>
+            <CardProjectMui
+              alt="shenga 3d"
+              target="_blank"
+              link="https://3dproject-peach.vercel.app/"
+              title="Shenga 3d"
+              text="Practica basica para usar modelos 3d"
+              img={"/img/projects/shenga.PNG"}
+            />
+          </Grid>
+          {/*  */}
           <Grid item xs={12} sm={4}>
             <CardProjectMui
               alt="maquetacion"
@@ -64,26 +96,29 @@ export const Projects = () => {
               img={"/img/projects/meli.png"}
             />
           </Grid>
-          <Grid item xs={12} sm={4}>
-            <CardProjectMui
-              alt="alkemy-proyecto-final"
-              modalUrl="https://www.youtube.com/embed/C-b-SEvSTXQ"
-              title="Alkemy ONG"
-              text="Proyecto grupal que cuenta una vista para usuarios normales, un backoffice para el admin y el backend en Nodejs"
-              img={"/img/projects/alkemyFinal.png"}
-            />
-          </Grid>
-          <Grid item xs={12} sm={4}>
-            <CardProjectMui
-              alt="react-query"
-              target="_self"
-              link="/project/react-query/"
-              title="React Query"
-              text="Practica con la libreria de React query simulando un ecommerce"
-              img={"/img/projects/react-query.png"}
-            />
-          </Grid>
-          {/*  <Grid item xs={12} sm={4}>
+
+          {visible ? (
+            <>
+              <Grid item xs={12} sm={4}>
+                <CardProjectMui
+                  alt="alkemy-proyecto-final"
+                  modalUrl="https://www.youtube.com/embed/C-b-SEvSTXQ"
+                  title="Alkemy ONG"
+                  text="Proyecto grupal que cuenta una vista para usuarios normales, un backoffice para el admin y el backend en Nodejs"
+                  img={"/img/projects/alkemyFinal.png"}
+                />
+              </Grid>
+              <Grid item xs={12} sm={4}>
+                <CardProjectMui
+                  alt="react-query"
+                  target="_self"
+                  link="/project/react-query/"
+                  title="React Query"
+                  text="Practica con la libreria de React query simulando un ecommerce"
+                  img={"/img/projects/react-query.png"}
+                />
+              </Grid>
+              {/*  <Grid item xs={12} sm={4}>
             <CardProjectMui
               alt="redux-toolkit"
               target="_self"
@@ -94,18 +129,16 @@ export const Projects = () => {
             />
           </Grid> */}
 
-          <Grid item xs={12} sm={4}>
-            <CardProjectMui
-              alt="money-calc"
-              modalUrl="https://www.youtube.com/embed/OVw1j94W5qc"
-              title="Calculadora de gastos"
-              text="Challenge para entrar a Alkemy, hecho en React y Nodejs"
-              img={"/img/projects/money.png"}
-            />
-          </Grid>
-          {visible ? (
-            <>
               <Grid item xs={12} sm={4}>
+                <CardProjectMui
+                  alt="money-calc"
+                  modalUrl="https://www.youtube.com/embed/OVw1j94W5qc"
+                  title="Calculadora de gastos"
+                  text="Challenge para entrar a Alkemy, hecho en React y Nodejs"
+                  img={"/img/projects/money.png"}
+                />
+              </Grid>
+              {/* <Grid item xs={12} sm={4}>
                 <CardProjectMui
                   alt="redux-toolkit"
                   target="_self"
@@ -134,7 +167,7 @@ export const Projects = () => {
                   text="Practica con patrones de diseño"
                   img={"/img/projects/patrones.png"}
                 />
-              </Grid>
+              </Grid> */}
             </>
           ) : (
             <></>
